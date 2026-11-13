@@ -139,3 +139,8 @@ O pedido do usuário é não mostrar item bloqueado ou que não existe mais. Por
 
 ## Passo de "Até X" = o que uma construção produz (13/nov/2026)
 - Pedido do usuário: vale para todos os itens. O `RecipeDef.targetCountAdjustment` é reescrito em runtime para `products[0].count` (só receitas com produto), porque o core só o lê nos -/+ da tarefa (`Bill_Production.DoConfigInterface`): mudança só de UI e que alcança vanilla, Nice e outros mods sem patch em cada um. Aplicado em `Game.FinalizeInit` (todas as defs prontas, inclusive as geradas pelo CE). Opção para desligar, com os valores originais guardados para restaurar. A nossa UI usa a mesma regra (`RecipeEntry.TargetStepOf`) com a opção ligada ou não.
+
+## Versionamento (13/nov/2026)
+- Pedido do usuário: changelog e versão nas descrições da Oficina.
+- SemVer. 1.0.0 = 1ª publicação na Oficina (7/nov/2026). MINOR = recurso novo, PATCH = só correção ou ajuste. Uma versão por dia com mudança visível (não sabemos quais dias foram enviados à Oficina; a próxima subida leva tudo).
+- Fonte da verdade: `Docs/CHANGELOG.md` (inglês, texto de jogador, sem nomes internos nem "não testado"). Antes de cada "Atualizar na Oficina": subir `<modVersion>` no `About.xml`, o `CHANGELOG.md` e a seção Changelog da `WORKSHOP_DESCRIPTION.txt` juntos, à mão. A descrição precisa ficar abaixo de 8000 caracteres.

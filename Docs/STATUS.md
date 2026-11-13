@@ -2,6 +2,12 @@
 
 Compila em 1.6 e 1.7 (3/nov/2026). **Nada foi testado no jogo ainda**; o visual em especial só se valida com screenshot do usuário.
 
+## Versão e changelog (13/nov/2026) - versão atual **1.3.0**, sem efeito no jogo além do número
+- `<modVersion>1.3.0</modVersion>` no `About/About.xml` (o campo existe no `ModMetaData` da 1.6 e da 1.7; o menu de mods mostra a versão).
+- `Docs/CHANGELOG.md` (novo, inglês, para jogador): uma versão por dia com mudança visível desde a publicação (1.0.0 = 7/nov). Montado por workflow de agentes a partir de STATUS/HISTORY/git e conferido item a item por um revisor cético.
+- `Docs/WORKSHOP_DESCRIPTION.txt`: linha "Mod version" ao lado de "Versions" e seção [h2]Changelog[/h2] no fim (a 1.0.0 vira uma linha só, porque os recursos já estão descritos acima; o limite da Steam é 8000 caracteres). **Colar na página da Oficina: pendente com o usuário.**
+- Nada testado no jogo (só o número no menu de mods mudaria).
+
 ## "Até X" anda pelo que cada construção produz (13/nov/2026) - instalado (1.6 e 1.7), **NÃO testado no jogo**
 - **Rodada 3 (auditoria por workflow de 3 agentes: nosso código, jogo/Dubs descompilados, defs dos 191 mods ativos)**: 1.144 de 2.569 receitas com produto tinham passo diferente do lote (CE 930; VCE 29, aoba 21, VGE 20, VBE 38, vanilla 15+3 DLC, MA/MAS 16...; lista completa no scratchpad da sessão, `mismatches.csv`). O passo já estava coberto pelo `TargetStepFix`; o que sobrava fora do lote era o **valor** da meta, agora corrigido:
   1. "+" da linha da receita (aba e janela) criava a tarefa com o `cfgQty` da receita anterior (o detalhe ainda não tinha recalculado): `AddOptions.qtyAuto` + `Configure` usa 1 lote desta receita quando o valor é nosso e nunca fica abaixo de 1 lote (`RecipeEntry.SetTarget`).

@@ -47,7 +47,7 @@ Source/                            C# (BillOrganizer.csproj)
   RecipeDetail.cs       painel de detalhe + comparar + opções da tarefa; usado pela janela e pela aba compacta (o host passa add/select/markDirty)
 build.ps1, Directory.Build.props   build das duas versões (SDK .NET 10; mesmo esquema do ../MountedArms, ver ../MountedArms/Docs/TOOLING.md)
 tools/gen_icon.py, gen_ui_tex.py   geram as texturas (PIL)
-Docs/                              STATUS, DECISIONS, HISTORY
+Docs/                              STATUS, DECISIONS, HISTORY, CHANGELOG (versões para jogador, inglês; ver regra de versão no CLAUDE.md do workspace), WORKSHOP_DESCRIPTION
 tools/deploy.ps1         publica a cópia limpa em RimWorld/Mods/<mod> (build.ps1 chama)
 tools/gen_preview.py     gera About/Preview.png (thumb da Oficina e do menu de mods)
 Docs/WORKSHOP_DESCRIPTION.txt   descrição da Oficina (BBCode, inglês)
