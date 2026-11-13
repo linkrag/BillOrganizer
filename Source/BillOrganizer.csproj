@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>BillOrganizer</AssemblyName>
+    <RootNamespace>BillOrganizer</RootNamespace>
+    <OutputPath>$(ModBinDir)$(RimWorldVersion)\Assemblies\</OutputPath>
+  </PropertyGroup>
+</Project>

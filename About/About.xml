@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Colony Organizer (Bill Organizer)</name>
+  <author>Felipe</author>
+  <packageId>linkrag.billorganizer</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Replaces the workbench "Add bill" list with a window that groups recipes, shows their stats and the stock of materials, so you stop clicking item by item.
+
+- Groups: weapons (melee, ranged, grenades), ammunition (by caliber with Combat Extended), apparel (head, torso, legs, hands, feet, accessories), plus meals, drugs, medicine and the rest by item category.
+- Sortable columns (damage, DPS, range, armor), bars relative to the best of the bench, minimum filters, search, favorites and recent recipes.
+- Detail panel: ingredients with what the map has, armor with every material, ammunition picker, and a compare table for up to 3 recipes.
+- "Can make": how many batches the stored resources allow (x12 on the list, bottleneck ingredient in the detail, "Max" button for the quantity, sortable column).
+- Pinned resources: Ctrl+click a resource in the list on the left; a panel beside it shows the stock, a minimum alert and the recipes that use it.
+- A "Recipes" button on every workbench opens the same catalog, so it also works with Nice Bill Tab.
+- Small benches keep the vanilla menu (threshold in the mod settings). Shift keeps the window open after adding.
+- Bill queue as cards (drag, pause, copy, change material), copy a whole queue to another bench, queue templates, linked benches and bench priority.
+- Bonuses and effects of items (mechanitor bandwidth, abilities, shields, implants, drugs) in the detail, compare and search (+bandwidth).
+- Work task force: a "Task force" button on the Work tab puts many colonists on a work type (e.g. Handling at 1) for a few hours, then gives each one back the priority they had.
+- Auto slaughter: a "Babies" column keeps babies (about 20% of the meat) out of slaughter and out of the limits.
+
+Works with Combat Extended (armor in mm RHA, ammunition and magazine from the ammo set). Nice Bill Tab replaces the whole bill tab: while its tab replacement is on, open this window with the workbench button. Dubs Mint Menus only adds a side panel and works together with it.
+
+Requires Harmony.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+    <li>CETeam.CombatExtended</li>
+    <li>Dubwise.DubsMintMenus</li>
+    <li>Andromeda.NiceBillTab</li>
+  </loadAfter>
+</ModMetaData>

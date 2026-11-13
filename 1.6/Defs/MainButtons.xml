@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Hidden until "Bills button on the bottom bar" is on in the mod settings (GlobalButton.Apply) -->
+	<MainButtonDef>
+		<defName>BO_Bills</defName>
+		<label>bills</label>
+		<description>Every workbench of the map with its bill queue: reorder, pause, copy, templates, and the recipe window.</description>
+		<tabWindowClass>BillOrganizer.MainTabWindow_BenchBills</tabWindowClass>
+		<buttonVisible>false</buttonVisible>
+		<defaultHotKey>None</defaultHotKey>
+		<order>101</order>
+		<minimized>True</minimized>
+		<iconPath>BillOrganizer/Catalog</iconPath>
+		<validWithoutMap>false</validWithoutMap>
+	</MainButtonDef>
+</Defs>

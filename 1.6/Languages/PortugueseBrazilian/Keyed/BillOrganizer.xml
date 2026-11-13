@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BO_GizmoLabel>Receitas</BO_GizmoLabel>
+	<BO_GizmoDesc>Abre a janela de receitas desta bancada: receitas agrupadas, busca, o que o estoque permite e a fila de tarefas.</BO_GizmoDesc>
+	<BO_SetEnabled>Usar a janela de receitas agrupadas</BO_SetEnabled>
+	<BO_SetEnabledTip>Desligado: o menu "Adicionar tarefa" original em todas as mesas e sem o botão na bancada.</BO_SetEnabledTip>
+	<BO_SetIntegration>O botão "Adicionar tarefa" da aba de tarefas:</BO_SetIntegration>
+	<BO_SetIntAuto>Abre esta janela</BO_SetIntAuto>
+	<BO_SetIntAutoTip>Só funciona enquanto nenhum outro mod troca a aba de tarefas inteira (o Nice Bill Tab troca, enquanto a troca dele estiver ligada).</BO_SetIntAutoTip>
+	<BO_SetIntGizmo>Manter o menu original (esta janela só abre pelo botão da bancada)</BO_SetIntGizmo>
+	<BO_SetIntGizmoTip>Use para ficar com o menu que outro mod der e ainda ter o catálogo.</BO_SetIntGizmoTip>
+	<BO_SetGizmo>Botão "Receitas" da bancada:</BO_SetGizmo>
+	<BO_SetGizmoNice>Só enquanto o Nice Bill Tab estiver trocando a aba de tarefas</BO_SetGizmoNice>
+	<BO_SetGizmoAlways>Sempre</BO_SetGizmoAlways>
+	<BO_SetGizmoNever>Nunca</BO_SetGizmoNever>
+	<BO_SetMin>Usar esta janela a partir de {0} receitas</BO_SetMin>
+	<BO_SetKeepOpen>Manter a janela aberta depois de adicionar uma tarefa</BO_SetKeepOpen>
+	<BO_SetKeepOpenTip>Segure Shift ao clicar para fazer isso uma vez.</BO_SetKeepOpenTip>
+	<BO_SetNiceOn>O Nice Bill Tab está trocando a aba de tarefas, então o "Adicionar tarefa" é o dele. Abra esta janela pelo botão "Receitas" da bancada.</BO_SetNiceOn>
+	<BO_SetNiceOff>O Nice Bill Tab está ativo mas a troca da aba está desligada: o "Adicionar tarefa" abre esta janela.</BO_SetNiceOff>
+	<BO_NodeFavorites>Favoritos</BO_NodeFavorites>
+	<BO_NodeRecent>Recentes</BO_NodeRecent>
+	<BO_NodeAll>Todas</BO_NodeAll>
+	<BO_NodeWeapons>Armas</BO_NodeWeapons>
+	<BO_NodeMelee>Corpo a corpo</BO_NodeMelee>
+	<BO_NodeRanged>À distância</BO_NodeRanged>
+	<BO_NodeGrenades>Granadas</BO_NodeGrenades>
+	<BO_NodeAmmo>Munição</BO_NodeAmmo>
+	<BO_NodeShells>Projéteis de artilharia</BO_NodeShells>
+	<BO_NodeApparel>Roupas</BO_NodeApparel>
+	<BO_NodeHead>Cabeça</BO_NodeHead>
+	<BO_NodeTorso>Torso</BO_NodeTorso>
+	<BO_NodeLegs>Pernas</BO_NodeLegs>
+	<BO_NodeHands>Mãos</BO_NodeHands>
+	<BO_NodeFeet>Pés</BO_NodeFeet>
+	<BO_NodeAccessories>Cintos e acessórios</BO_NodeAccessories>
+	<BO_NodeOther>Outros</BO_NodeOther>
+	<BO_NoRecipes>Esta bancada não tem nenhuma receita disponível agora.</BO_NoRecipes>
+	<BO_StackFull>Lista de tarefas cheia</BO_StackFull>
+	<BO_Added>Adicionada: {0}</BO_Added>
+	<BO_Hint>Duplo clique ou +: adicionar. Shift+clique: comparar.</BO_Hint>
+	<BO_FilterStock>Com material</BO_FilterStock>
+	<BO_FilterStockTip>Esconde as receitas para as quais o mapa não tem os materiais.</BO_FilterStockTip>
+	<BO_SortAvail>Disponíveis primeiro</BO_SortAvail>
+	<BO_SortAvailTip>As receitas que você pode fazer agora vêm primeiro.</BO_SortAvailTip>
+	<BO_Min>Mín. {0}:</BO_Min>
+	<BO_StockReady>Materiais disponíveis</BO_StockReady>
+	<BO_StockMissing>Faltam materiais</BO_StockMissing>
+	<BO_StockUnknown>Estoque desconhecido (um ingrediente não é recurso contado)</BO_StockUnknown>
+	<BO_ColName>Receita</BO_ColName>
+	<BO_FavoriteTip>Favorito</BO_FavoriteTip>
+	<BO_AddTip>Adicionar tarefa (Shift mantém a janela aberta)</BO_AddTip>
+	<BO_InStock>Em estoque: {0}</BO_InStock>
+	<BO_NoMatch>Nenhuma receita encontrada.</BO_NoMatch>
+	<BO_PickOne>Selecione uma receita para ver os detalhes, ou fixe várias para comparar.</BO_PickOne>
+	<BO_AddBill>Adicionar tarefa</BO_AddBill>
+	<BO_PinTip>Fixar para comparar (até 3)</BO_PinTip>
+	<BO_MissingMat>Faltam materiais no mapa.</BO_MissingMat>
+	<BO_NoSkill>Nenhum colono tem a habilidade exigida.</BO_NoSkill>
+	<BO_SecStats>Atributos</BO_SecStats>
+	<BO_AmmoPick>Valores com:</BO_AmmoPick>
+	<BO_BestOnBench>Melhor deste tipo nesta bancada: {0}</BO_BestOnBench>
+	<BO_SecMaterials>Materiais</BO_SecMaterials>
+	<BO_MoreMaterials>+{0} materiais</BO_MoreMaterials>
+	<BO_BestInStockHint>Destacado: o melhor material que você tem em quantidade suficiente.</BO_BestInStockHint>
+	<BO_SecIngredients>Requisitos</BO_SecIngredients>
+	<BO_SingleMaterial>Um único material é usado no item inteiro (sem misturar).</BO_SingleMaterial>
+	<BO_SecUsers>Usada por</BO_SecUsers>
+	<BO_SecCompare>Comparar</BO_SecCompare>
+	<BO_Clear>Limpar</BO_Clear>
+	<BO_NoCommonStats>Estas receitas não têm atributos em comum para comparar.</BO_NoCommonStats>
+	<BO_Stat_dps>DPS</BO_Stat_dps>
+	<BO_StatTip_dps>Dano por segundo (mira, recarga e rajada incluídas).</BO_StatTip_dps>
+	<BO_Stat_damage>Dano</BO_Stat_damage>
+	<BO_StatTip_damage>Dano de um golpe ou tiro.</BO_StatTip_damage>
+	<BO_Stat_pen>Penetração</BO_Stat_pen>
+	<BO_StatTip_pen>Penetração de armadura.</BO_StatTip_pen>
+	<BO_Stat_range>Alcance</BO_Stat_range>
+	<BO_StatTip_range>Alcance em células.</BO_StatTip_range>
+	<BO_Stat_burst>Rajada</BO_Stat_burst>
+	<BO_StatTip_burst>Tiros por rajada.</BO_StatTip_burst>
+	<BO_Stat_mag>Carregador</BO_Stat_mag>
+	<BO_StatTip_mag>Cartuchos por carregador (Combat Extended).</BO_StatTip_mag>
+	<BO_Stat_users>Armas</BO_Stat_users>
+	<BO_StatTip_users>Quantas armas aceitam esta munição (Combat Extended).</BO_StatTip_users>
+	<BO_Stat_sharp>Cortante</BO_Stat_sharp>
+	<BO_StatTip_sharp>Armadura contra dano cortante. Com vários materiais é o melhor deles; o detalhe mostra a faixa.</BO_StatTip_sharp>
+	<BO_Stat_blunt>Contundente</BO_Stat_blunt>
+	<BO_StatTip_blunt>Armadura contra dano contundente.</BO_StatTip_blunt>
+	<BO_Stat_heat>Calor</BO_Stat_heat>
+	<BO_StatTip_heat>Armadura contra calor.</BO_StatTip_heat>
+	<BO_Stat_cold>Frio</BO_Stat_cold>
+	<BO_Stat_work>Trabalho</BO_Stat_work>
+	<BO_StatTip_work>Quantidade de trabalho de uma execução da receita (o mesmo número da ficha de informação). Colonos mais rápidos terminam antes.</BO_StatTip_work>
+	<BO_Stat_skill>Habilidade</BO_Stat_skill>
+	<BO_StatTip_skill>Maior nível mínimo de habilidade que a receita exige. Vermelho: nenhum colono do mapa tem.</BO_StatTip_skill>
+	<BO_Stat_value>Valor</BO_Stat_value>
+	<BO_StatTip_value>Valor de mercado de um item do produto (material padrão).</BO_StatTip_value>
+	<BO_Stat_make>Lotes</BO_Stat_make>
+	<BO_StatTip_make>Quantos lotes desta receita os recursos guardados permitem (mesma contagem da lista de recursos à esquerda).</BO_StatTip_make>
+	<BO_CanMake>Dá para fazer {0} ({1} itens)</BO_CanMake>
+	<BO_CanMakeBy>, limitado por {0}</BO_CanMakeBy>
+	<BO_CanMakeTip>Dá para fazer: {0} lotes ({1} itens).</BO_CanMakeTip>
+	<BO_CanMakeLimit>Limite: {0} (tem {1}, cada lote usa {2}).</BO_CanMakeLimit>
+	<BO_CanMakeUnknown>Desconhecido: nenhum ingrediente é um recurso contado.</BO_CanMakeUnknown>
+	<BO_PinPanelTitle>Fixados ({0})</BO_PinPanelTitle>
+	<BO_PinPanelTip>Recursos fixados. Clique para recolher. Ctrl+clique num recurso da lista à esquerda fixa ou desafixa; botão direito numa linha define o mínimo.</BO_PinPanelTip>
+	<BO_PinRowTip>Botão direito: mínimo / desafixar.</BO_PinRowTip>
+	<BO_PinMinTip>Mínimo: {0} (fica vermelho abaixo disso).</BO_PinMinTip>
+	<BO_PinUsedBy>Receitas que usam (lotes que o estoque permite):</BO_PinUsedBy>
+	<BO_PinMoreRecipes>... e mais {0}</BO_PinMoreRecipes>
+	<BO_PinSetMin>Definir mínimo...</BO_PinSetMin>
+	<BO_PinClearMin>Limpar mínimo</BO_PinClearMin>
+	<BO_PinRemove>Desafixar</BO_PinRemove>
+	<BO_PinMinLabel>Mínimo de {0}: {1}</BO_PinMinLabel>
+	<BO_SetPinPanel>Painel de recursos fixados (Ctrl+clique na lista de recursos)</BO_SetPinPanel>
+	<BO_SetPinPanelTip>Mostra os recursos fixados ao lado da lista de recursos à esquerda, com estoque, alerta de mínimo e as receitas que usam cada um.</BO_SetPinPanelTip>
+	<BO_Max>Máx</BO_Max>
+	<BO_MaxTip>Tudo o que o estoque permite: {0} lotes ({1} itens).</BO_MaxTip>
+	<BO_SecProduction>Produção</BO_SecProduction>
+	<BO_IngredientsValue>Os ingredientes valem cerca de {0}.</BO_IngredientsValue>
+	<BO_SearchHelp>Várias palavras precisam casar todas. Palavra comum busca nome, mod, material, categoria, camada, tag e pesquisa. Prefixos: @ categoria (@ammo), % camada ou parte do corpo (%head), # mod (#royalty), + bônus ou efeito (+banda, +psíquica). Ctrl+F foca a busca.</BO_SearchHelp>
+	<BO_StatTip_cold>Isolamento contra frio.</BO_StatTip_cold>
+	<BO_AddedN>Adicionadas {0}x: {1}</BO_AddedN>
+	<BO_QueueTab>Fila {0}/{1}</BO_QueueTab>
+	<BO_QueueTabTip>Mostra as tarefas já na fila desta bancada: arraste para reordenar, pause, copie, modelos.</BO_QueueTabTip>
+	<BO_SetIngIcons>Ícones dos ingredientes sob o nome da receita</BO_SetIngIcons>
+	<BO_SetAutoName>Nomear a tarefa com o material escolhido</BO_SetAutoName>
+	<BO_SetAutoNameTip>Só quando um material é escolhido no painel de detalhe: a tarefa vira "Receita (Material)".</BO_SetAutoNameTip>
+	<BO_SetStepByBatch>"Até X" anda pelo que uma construção produz (todas as tarefas)</BO_SetStepByBatch>
+	<BO_SetStepByBatchTip>O -/+ de "Até X" soma ou tira o que uma construção produz (5 em "mortar shells x5", 200 em "cartridge x200"), também na lista de tarefas vanilla e em outros mods. Alguns mods usam um passo fixo (o Combat Extended usa 20 em toda munição). Desligado: voltam os passos originais.</BO_SetStepByBatchTip>
+	<BO_SetGlobalButton>Botão "Tarefas" na barra inferior (todas as bancadas, filas, modelos)</BO_SetGlobalButton>
+	<BO_SetGlobalButtonTip>Vale quando você fecha esta janela.</BO_SetGlobalButtonTip>
+	<BO_SetWinW>Largura da janela de receitas: {0}</BO_SetWinW>
+	<BO_SetWinH>Altura da janela de receitas: {0}</BO_SetWinH>
+	<BO_SecBillOptions>Opções da tarefa</BO_SecBillOptions>
+	<BO_ModeDefault>Padrão</BO_ModeDefault>
+	<BO_ModeDefaultTip>Igual ao menu do jogo: fazer 1 vez.</BO_ModeDefaultTip>
+	<BO_ModeCount>Fazer X vezes</BO_ModeCount>
+	<BO_ModeCountTip>Faz a quantidade definida e para.</BO_ModeCountTip>
+	<BO_ModeTarget>Até ter X</BO_ModeTarget>
+	<BO_ModeTargetTip>Fabrica até ter X em estoque.</BO_ModeTargetTip>
+	<BO_ModeForever>Para sempre</BO_ModeForever>
+	<BO_ModeForeverTip>Continua fazendo enquanto houver material.</BO_ModeForeverTip>
+	<BO_Times>Cópias</BO_Times>
+	<BO_TimesTip>Quantas cópias desta tarefa adicionar de uma vez (até o espaço livre da lista).</BO_TimesTip>
+	<BO_Material>Material</BO_Material>
+	<BO_MatAny>Qualquer (padrão)</BO_MatAny>
+	<BO_MaterialTip>Restringe a tarefa a um material. O número no menu é o estoque.</BO_MaterialTip>
+	<BO_MatSortTip>Ordena os materiais por este atributo.</BO_MatSortTip>
+	<BO_IngClickTip>Clique: informação, achar no mapa, enfileirar em outra bancada.</BO_IngClickTip>
+	<BO_IngInfo>Ficha de informação</BO_IngInfo>
+	<BO_IngFind>Achar {0} no mapa ({1})</BO_IngFind>
+	<BO_IngFindNone>Nenhum {0} no mapa</BO_IngFindNone>
+	<BO_IngQueue>Fazer {0}x {1} em uma bancada</BO_IngQueue>
+	<BO_IngQueueNone>Nenhuma bancada faz {0} agora</BO_IngQueueNone>
+	<BO_IngQueued>{0} enfileirado em {1}.</BO_IngQueued>
+	<BO_DiffOnly>Diferenças</BO_DiffOnly>
+	<BO_DiffOnlyTip>Esconde os atributos iguais em todas as receitas fixadas.</BO_DiffOnlyTip>
+	<BO_QueueTitle>Fila {0}/{1}</BO_QueueTitle>
+	<BO_QPaste>Colar</BO_QPaste>
+	<BO_QPasteTip>Cola o que foi copiado por último: a fila inteira (Copiar fila) ou uma tarefa (botão de copiar do cartão ou da aba do jogo). O que não serve nesta bancada é pulado.</BO_QPasteTip>
+	<BO_QCopyQueue>Copiar fila</BO_QCopyQueue>
+	<BO_QCopyQueueTip>Copia todas as tarefas desta fila. Colar põe todas em qualquer bancada deste jogo (o que não serve é pulado). Para guardar a fila entre saves, use Salvar modelo.</BO_QCopyQueueTip>
+	<BO_QQueueCopied>Fila copiada ({0} tarefas). Use Colar em qualquer bancada.</BO_QQueueCopied>
+	<BO_QSaveTpl>Salvar modelo</BO_QSaveTpl>
+	<BO_QSaveTplTip>Salva toda esta fila com um nome, para colar nesta ou em outra bancada, em qualquer save.</BO_QSaveTplTip>
+	<BO_QTemplates>Modelos</BO_QTemplates>
+	<BO_QTemplatesTip>Cola aqui uma fila salva (o que não cabe nesta bancada é pulado), ou gerencia os modelos.</BO_QTemplatesTip>
+	<BO_QueueEmpty>Nenhuma tarefa nesta bancada.</BO_QueueEmpty>
+	<BO_QActions>Ações</BO_QActions>
+	<BO_QActionsTip>Colar, modelos, pausar todas, limpar concluídas / fila.</BO_QActionsTip>
+	<BO_QDetails>Detalhes: filtros, qualidade, vida, raio, quem faz.</BO_QDetails>
+	<BO_QModeTip>Clique para trocar: fazer X vezes / até ter X / para sempre. Use - e + para o número.</BO_QModeTip>
+	<BO_MatAnyShort>Qualquer material</BO_MatAnyShort>
+	<BO_MatNone>Nenhum material liberado</BO_MatNone>
+	<BO_MatSome>{0} de {1} liberados</BO_MatSome>
+	<BO_MatTipHead>Materiais liberados</BO_MatTipHead>
+	<BO_MatClickTip>Clique para trocar o material desta tarefa.</BO_MatClickTip>
+	<BO_QMoveUp>Subir (Shift: para o topo). Também dá para arrastar o cartão.</BO_QMoveUp>
+	<BO_QMoveDown>Descer (Shift: para o fim). Também dá para arrastar o cartão.</BO_QMoveDown>
+	<BO_QDelete>Apagar</BO_QDelete>
+	<BO_QCopy>Copiar</BO_QCopy>
+	<BO_QCopied>Copiada. Use Colar em qualquer bancada.</BO_QCopied>
+	<BO_QDuplicate>Duplicar (cópia logo abaixo)</BO_QDuplicate>
+	<BO_QPause>Pausar</BO_QPause>
+	<BO_QResume>Retomar</BO_QResume>
+	<BO_QSuspended>Pausada</BO_QSuspended>
+	<BO_QTarget>Até {0}</BO_QTarget>
+	<BO_QCount>{0}x</BO_QCount>
+	<BO_QNotNow>Agora não</BO_QNotNow>
+	<BO_QClipEmpty>Nada copiado ainda.</BO_QClipEmpty>
+	<BO_TplSaved>Modelo "{0}" salvo ({1} tarefas).</BO_TplSaved>
+	<BO_TplBusy>Os modelos não ficam disponíveis enquanto o jogo carrega ou salva.</BO_TplBusy>
+	<BO_TplWriteFail>Não consegui gravar o arquivo de modelos (veja o log).</BO_TplWriteFail>
+	<BO_TplPasted>Coladas de "{1}": {0}</BO_TplPasted>
+	<BO_TplSkippedRecipe>Puladas (não servem nesta bancada): {0}</BO_TplSkippedRecipe>
+	<BO_TplSkippedFull>Puladas (lista cheia): {0}</BO_TplSkippedFull>
+	<BO_TplManage>Gerenciar modelos...</BO_TplManage>
+	<BO_TplNamePrompt>Nome do modelo:</BO_TplNamePrompt>
+	<BO_TplTitle>Modelos de tarefas</BO_TplTitle>
+	<BO_TplNone>Nenhum modelo salvo. Abra a fila de uma bancada e use "Salvar modelo".</BO_TplNone>
+	<BO_TplBills>{0} tarefas</BO_TplBills>
+	<BO_TplRename>Renomear</BO_TplRename>
+	<BO_TplDelete>Apagar</BO_TplDelete>
+	<BO_TplConfirmDelete>Apagar o modelo "{0}"?</BO_TplConfirmDelete>
+	<BO_NoBenches>Nenhuma bancada encontrada.</BO_NoBenches>
+	<BO_PickBench>Escolha uma bancada à esquerda.</BO_PickBench>
+	<BO_OpenRecipes>Receitas</BO_OpenRecipes>
+	<BO_GoToBench>Ir à bancada</BO_GoToBench>
+	<BO_PinnedTip>Fixada para comparar (veja Comparar no painel de detalhe).</BO_PinnedTip>
+	<BO_SetCompactTab>Aba de tarefas compacta: lista de receitas e detalhes</BO_SetCompactTab>
+	<BO_SetCompactTabTip>Uma aba de tarefas mais larga: fila e lista de receitas à esquerda, detalhes da receita à direita. Fica desligada enquanto o Nice Bill Tab troca a aba. Reabra a aba para aplicar.</BO_SetCompactTabTip>
+	<BO_SetTabW>Largura da aba compacta: {0}</BO_SetTabW>
+	<BO_SetTabH>Altura da aba compacta: {0}</BO_SetTabH>
+	<BO_SetTabQueue>Altura da fila de tarefas na aba: {0}</BO_SetTabQueue>
+	<BO_TabHint>Duplo clique ou +: adicionar</BO_TabHint>
+	<BO_QPauseAll>Pausar todas</BO_QPauseAll>
+	<BO_QResumeAll>Retomar todas</BO_QResumeAll>
+	<BO_QClearDone>Limpar concluídas</BO_QClearDone>
+	<BO_QClearAll>Limpar fila</BO_QClearAll>
+	<BO_QPauseAllTip>Pausa todas as tarefas desta bancada (ou retoma todas quando já estão todas pausadas).</BO_QPauseAllTip>
+	<BO_QClearDoneTip>Apaga as tarefas "fazer X vezes" que já chegaram a zero.</BO_QClearDoneTip>
+	<BO_QClearAllTip>Apaga todas as tarefas desta bancada (pede confirmação).</BO_QClearAllTip>
+	<BO_QClearAllConfirm>Apagar as {0} tarefas desta bancada?</BO_QClearAllConfirm>
+	<BO_QClearedN>Tarefas apagadas: {0}</BO_QClearedN>
+	<BO_TplOverwrite>Já existe um modelo chamado "{0}" para esta bancada. Substituir?</BO_TplOverwrite>
+	<BO_LinkLabel>Vincular bancada</BO_LinkLabel>
+	<BO_LinkDesc>Compartilha a fila de tarefas com outra bancada do mesmo tipo: adicionar, apagar, reordenar, pausar ou editar uma tarefa numa aparece na outra, e o "fazer X vezes" é contado em conjunto. A fila desta bancada é copiada para a que você escolher.</BO_LinkDesc>
+	<BO_UnlinkLabel>Desvincular ({0})</BO_UnlinkLabel>
+	<BO_UnlinkDesc>Para de compartilhar a fila. Cada bancada fica com a sua cópia das tarefas.</BO_UnlinkDesc>
+	<BO_LinkRejectSelf>Escolha outra bancada.</BO_LinkRejectSelf>
+	<BO_LinkRejectDef>Só dá para vincular bancadas do mesmo tipo.</BO_LinkRejectDef>
+	<BO_LinkRejectMap>As bancadas precisam estar no mesmo mapa.</BO_LinkRejectMap>
+	<BO_LinkRejectFaction>Essa bancada não é sua.</BO_LinkRejectFaction>
+	<BO_LinkRejectSame>Essas bancadas já estão vinculadas.</BO_LinkRejectSame>
+	<BO_LinkRejectGroups>As duas bancadas estão em grupos diferentes. Desvincule uma delas antes.</BO_LinkRejectGroups>
+	<BO_LinkConfirm>Vincular bancadas? As tarefas que já estão na outra bancada ({0}) serão substituídas por uma cópia desta fila. Desvincular depois mantém a cópia.</BO_LinkConfirm>
+	<BO_LinkDone>Bancadas vinculadas ({0}). Agora compartilham as mesmas tarefas.</BO_LinkDone>
+	<BO_UnlinkDone>Bancada desvinculada.</BO_UnlinkDone>
+	<BO_SetLink>Bancadas vinculadas (fila compartilhada)</BO_SetLink>
+	<BO_SetLinkTip>Põe um botão "Vincular bancada" nas bancadas. Desligar mantém os vínculos existentes mas para de sincronizar.</BO_SetLinkTip>
+	<BO_ResPinned>Fixados</BO_ResPinned>
+	<BO_ResOther>Outros</BO_ResOther>
+	<BO_ResSortCat>Categoria</BO_ResSortCat>
+	<BO_ResSortQty>Qtd.</BO_ResSortQty>
+	<BO_ResSortName>Nome</BO_ResSortName>
+	<BO_ResSortTip>Ordena a lista de recursos: por categoria (seções recolhíveis), por quantidade ou por nome.</BO_ResSortTip>
+	<BO_ResFoldTip>Recolhe ou expande todas as categorias.</BO_ResFoldTip>
+	<BO_PinAdd>Fixar</BO_PinAdd>
+	<BO_SetResList>Lista de recursos organizada à esquerda (nomes, ordem, categorias, busca)</BO_SetResList>
+	<BO_SetResListTip>Troca a lista de ícone + número por uma com nomes, ordenação, categorias recolhíveis e busca. Ctrl+clique fixa um recurso no topo. Desligado = lista do jogo.</BO_SetResListTip>
+	<BO_SetResListW>Largura da lista de recursos: {0}</BO_SetResListW>
+	<BO_SetResSort>Ordem da lista de recursos:</BO_SetResSort>
+	<BO_BenchPrio>Prioridade</BO_BenchPrio>
+	<BO_BenchPrioTip>Prioridade da bancada (-5 a +5). Os colonos tentam a maior primeiro entre bancadas da mesma habilidade, depois a mais próxima. Shift: de 5 em 5.</BO_BenchPrioTip>
+	<BO_SetBenchPrio>Prioridade de bancada entre tipos da mesma habilidade</BO_SetBenchPrio>
+	<BO_SetBenchPrioTip>Ligado: a prioridade também ordena tipos diferentes da mesma habilidade (bancada de fabricação antes da forja). Desligado: só ordena bancadas do mesmo tipo. A aba Trabalho continua decidindo entre habilidades.</BO_SetBenchPrioTip>
+	<BO_QDone>Concluída</BO_QDone>
+	<BO_QDoneTip>Concluída. Use Limpar concluídas, ou aumente o número para fazer de novo.</BO_QDoneTip>
+	<BO_QCountTip>Fazer X vezes: faltam {0}.</BO_QCountTip>
+	<BO_QTargetTip>Até ter X: você tem {0}, meta {1}.</BO_QTargetTip>
+	<BO_QMetTip>Meta atingida. Volta a fazer quando o estoque cair abaixo de {0}.</BO_QMetTip>
+	<BO_QNotNowTip>Ninguém pode trabalhar nela agora (material, habilidade, área ou bancada).</BO_QNotNowTip>
+	<BO_StackFullShort>Lista cheia</BO_StackFullShort>
+	<BO_QClearedNone>Nenhuma tarefa concluída.</BO_QClearedNone>
+	<BO_TabHintTip>Clique: detalhes. Duplo clique ou +: adiciona a tarefa. Botão direito: abre a janela completa nessa receita. Shift+clique: fixa para comparar.</BO_TabHintTip>
+	<BO_KeysHelp>Teclas: setas selecionam, Enter adiciona, Shift+Enter ou Shift no + mantém a janela aberta, Ctrl+F busca.</BO_KeysHelp>
+	<BO_AmmoFilter>Munição:</BO_AmmoFilter>
+	<BO_AmmoFilterTip>Mostrar só este tipo de munição (clique de novo para limpar).</BO_AmmoFilterTip>
+	<BO_DescMore>Mais</BO_DescMore>
+	<BO_DescLess>Menos</BO_DescLess>
+	<BO_Range>{0} a {1}</BO_Range>
+	<BO_CanMakeOne>Dá para fazer {0}</BO_CanMakeOne>
+	<BO_QtyCount>Vezes</BO_QtyCount>
+	<BO_QtyTarget>Meta</BO_QtyTarget>
+	<BO_MaxTipTarget>Meta = o que você tem ({0}) + o que o estoque permite ({1}).</BO_MaxTipTarget>
+	<BO_ThousandsSep>.</BO_ThousandsSep>
+	<BO_SecGeneral>Geral</BO_SecGeneral>
+	<BO_SecWindow>Janela de receitas</BO_SecWindow>
+	<BO_SecTab>Aba de tarefas</BO_SecTab>
+	<BO_SecBenches>Bancadas</BO_SecBenches>
+	<BO_SecResources>Recursos</BO_SecResources>
+	<BO_SetMinTip>Mesas com menos receitas mantêm o menu "Adicionar tarefa" original. 0 = sempre usar esta janela.</BO_SetMinTip>
+	<BO_ColBench>Bancada</BO_ColBench>
+	<BO_ColBills>Tarefas</BO_ColBills>
+	<BO_ColBillsTip>Tarefas da bancada: ativas / total (as pausadas não contam como ativas).</BO_ColBillsTip>
+	<BO_BenchCountTip>{0} ativas de {1} tarefas.</BO_BenchCountTip>
+	<BO_NoBenchMatch>Nenhuma bancada corresponde à busca.</BO_NoBenchMatch>
+	<BO_ResNoMatch>Nenhum recurso encontrado.</BO_ResNoMatch>
+	<BO_TplFit>{0}: {1} de {2} tarefas cabem</BO_TplFit>
+	<BO_TplNoFit>{0}: não serve para esta bancada</BO_TplNoFit>
+	<BO_TplWindowHint>Para colar, abra a fila de uma bancada: Ações, Modelos.</BO_TplWindowHint>
+	<BO_AmmoAll>Todos</BO_AmmoAll>
+	<BO_PresetTip>Define {0} (o botão fica marcado). Clique de novo para somar mais {0}.</BO_PresetTip>
+	<BO_DevDumpGroups>Modo dev: grava no log (Player.log) o grupo de cada receita desta bancada.</BO_DevDumpGroups>
+	<BO_DevDumpDone>Grupos das receitas gravados no log.</BO_DevDumpDone>
+	<BO_NodeProcessing>Processamento</BO_NodeProcessing>
+	<BO_NodeMechanoids>Mecanoides</BO_NodeMechanoids>
+	<BO_NodeCreatures>Criaturas</BO_NodeCreatures>
+	<BO_CanMakeStuffTip>Contando só {0} (você tem {1}): a tarefa não vai usar outro material.</BO_CanMakeStuffTip>
+	<BO_NodeRituals>Rituais</BO_NodeRituals>
+	<BO_NodeThrown>Arremesso</BO_NodeThrown>
+	<BO_RcPistol>Pistolas</BO_RcPistol>
+	<BO_RcSMG>SMGs</BO_RcSMG>
+	<BO_RcShotgun>Escopetas</BO_RcShotgun>
+	<BO_RcRifle>Fuzis</BO_RcRifle>
+	<BO_RcSniper>Snipers</BO_RcSniper>
+	<BO_RcMG>Metralhadoras</BO_RcMG>
+	<BO_RcHeavy>Armas pesadas</BO_RcHeavy>
+	<BO_RcPrimitive>Primitivas</BO_RcPrimitive>
+	<BO_RcNonLethal>Não letais</BO_RcNonLethal>
+	<BO_RcUtility>Utilitários</BO_RcUtility>
+	<BO_HsHelmet>Capacetes</BO_HsHelmet>
+	<BO_HsFace>Rosto e pescoço</BO_HsFace>
+	<BO_HsHat>Chapéus</BO_HsHat>
+	<BO_TsArmor>Armaduras</BO_TsArmor>
+	<BO_TsOuter>Agasalhos</BO_TsOuter>
+	<BO_TsClothes>Roupas</BO_TsClothes>
+	<BO_MatRowClickTip>Clique: faz a tarefa com este material (de novo: qualquer material).</BO_MatRowClickTip>
+	<BO_StepTip>-/+ {0} por clique.</BO_StepTip>
+	<BO_StepKeys>{0}+clique x10, {1}+clique x100.</BO_StepKeys>
+	<!-- bonuses and effects (Bonus.cs) -->
+	<BO_SecBonus>Bônus e efeitos</BO_SecBonus>
+	<BO_BonusEquip>Ao vestir / empunhar</BO_BonusEquip>
+	<BO_BonusAbility>Habilidades e cargas</BO_BonusAbility>
+	<BO_BonusWorn>Aplica enquanto vestido</BO_BonusWorn>
+	<BO_BonusImplant>Implante</BO_BonusImplant>
+	<BO_BonusMech>Mecanoide</BO_BonusMech>
+	<BO_BonusIngest>Ao ingerir</BO_BonusIngest>
+	<BO_BonusOther>Outros efeitos</BO_BonusOther>
+	<BO_BonusGrants>Concede</BO_BonusGrants>
+	<BO_BonusGrantsShort>Concede</BO_BonusGrantsShort>
+	<BO_BonusApplies>Aplica</BO_BonusApplies>
+	<BO_BonusInstalls>Instala</BO_BonusInstalls>
+	<BO_BonusPartEff>Eficiência da parte</BO_BonusPartEff>
+	<BO_BonusPartEffTip>Quão bem a parte instalada funciona comparada à natural (100%).</BO_BonusPartEffTip>
+	<BO_BonusAbilityOf>Habilidade</BO_BonusAbilityOf>
+	<BO_BonusColTip>{0} ganho ao vestir ou empunhar o item.</BO_BonusColTip>
+	<BO_BonusMarkTip>Este item faz mais do que os atributos mostram:</BO_BonusMarkTip>
+	<BO_BonusLinkTip>Clique: abre o cartão de informações.</BO_BonusLinkTip>
+	<BO_QPasteQueueTip>Colar a fila copiada: {0} de {1} tarefas servem nesta bancada.</BO_QPasteQueueTip>
+	<BO_CloseTab>Fechar</BO_CloseTab>
+	<BO_RecipeUnavailable>{0}: esta receita não está disponível nesta bancada agora (pesquisa não concluída ou removida por um mod).</BO_RecipeUnavailable>
+	<BO_SecAnimals>Animais</BO_SecAnimals>
+	<BO_SetSlBabies>Abate automático: coluna "Bebês" (proteger bebês)</BO_SetSlBabies>
+	<BO_SetSlBabiesTip>Adiciona a coluna "Bebês" à janela vanilla de abate automático. Um bebê rende cerca de 20% da carne de um adulto (10% nos bebês minúsculos), então bebês não são abatidos e não contam nos limites, a menos que você marque "Permitir abate" naquele animal. Desligado: regras vanilla.</BO_SetSlBabiesTip>
+	<BO_SlBabies>Bebês</BO_SlBabies>
+	<BO_SlBabiesTip>Bebês são animais no primeiro estágio de vida. Um bebê rende cerca de 20% da carne de um adulto (10% nos bebês minúsculos). Juvenis rendem cerca de 50%.</BO_SlBabiesTip>
+	<BO_SlCurrentTip>Bebês deste animal que o abate automático enxerga agora.</BO_SlCurrentTip>
+	<BO_SlAllowTip>Permite o abate automático dos bebês deste animal. Desmarcado: bebês nunca são abatidos automaticamente e ficam fora das contagens e dos limites de jovens e do total (como os vinculados quando não permitidos).</BO_SlAllowTip>
+	<!-- Task force (temporary work priority) -->
+	<BO_SecWork>Trabalho</BO_SecWork>
+	<BO_SetTaskForce>Botão "Força-tarefa" na aba Trabalho</BO_SetTaskForce>
+	<BO_SetTaskForceTip>Prioridade de trabalho temporária: coloca vários colonos num trabalho (ex.: Lidar com animais em 1) por algumas horas e devolve a cada um a prioridade que tinha quando o tempo acaba.</BO_SetTaskForceTip>
+	<BO_TFButton>Força-tarefa</BO_TFButton>
+	<BO_TFButtonTip>Sobe um ou mais trabalhos em vários colonos por um tempo (ex.: todos em Lidar com animais por 6 horas depois que os animais fugiram do curral). Quando o tempo acaba, cada colono volta à prioridade que tinha. Prioridade que você mudar à mão no meio fica como você deixou.</BO_TFButtonTip>
+	<BO_TFTitle>Força-tarefa</BO_TFTitle>
+	<BO_TFIntro>Prioridade temporária: quando o tempo acaba, cada colono volta ao valor que tinha (o que você mudar à mão no meio fica como você deixou).</BO_TFIntro>
+	<BO_TFWorks>Trabalho</BO_TFWorks>
+	<BO_TFPrio>Prioridade</BO_TFPrio>
+	<BO_TFPrioTip>Prioridade durante a força-tarefa (1 = feito primeiro). Com o mesmo número, o jogo segue a ordem das colunas da aba Trabalho: Bombeiro, Paciente, Médico, Básico e Carcereiro vêm antes de Lidar com animais.</BO_TFPrioTip>
+	<BO_TFDuration>Duração</BO_TFDuration>
+	<BO_TFHours>{0}h</BO_TFHours>
+	<BO_TFDays>{0}d</BO_TFDays>
+	<BO_TFInterrupt>Interromper o trabalho atual</BO_TFInterrupt>
+	<BO_TFInterruptTip>Colonos fazendo trabalho comum de prioridade menor largam e pegam o trabalho da força-tarefa na hora. Nunca são interrompidos: comer, dormir, trabalho de médico (resgate, tratamento, cirurgia), pacientes na cama, combate a incêndio, emergências, quem está carregando alguém, colonos convocados e ordens que você deu à mão.</BO_TFInterruptTip>
+	<BO_TFManualOff>Prioridades manuais desligadas: sem elas a força-tarefa só consegue ligar o trabalho (sem prioridade 1).</BO_TFManualOff>
+	<BO_TFTurnOnManual>Ligar prioridades manuais</BO_TFTurnOnManual>
+	<BO_TFTurnOnManualTip>O mesmo que a caixa "Prioridades manuais" da aba Trabalho. Continua ligada depois da força-tarefa.</BO_TFTurnOnManualTip>
+	<BO_TFColonists>Colonos</BO_TFColonists>
+	<BO_TFAll>Todos</BO_TFAll>
+	<BO_TFNone>Nenhum</BO_TFNone>
+	<BO_TFPickWork>Escolha pelo menos um trabalho à esquerda.</BO_TFPickWork>
+	<BO_TFMoreWorks>+{0} trabalhos (não mostrados)</BO_TFMoreWorks>
+	<BO_TFIncapable>{0} não pode fazer nenhum dos trabalhos escolhidos.</BO_TFIncapable>
+	<BO_TFActive>Forças-tarefa ativas</BO_TFActive>
+	<BO_TFActiveLine>{0}: {1} colonos, faltam {2}</BO_TFActiveLine>
+	<BO_TFBackTo>volta a {0}</BO_TFBackTo>
+	<BO_TFOff>desligado</BO_TFOff>
+	<BO_TFEnd>Encerrar</BO_TFEnd>
+	<BO_TFEndTip>Encerra a força-tarefa ({0}) agora: cada colono volta à prioridade que tinha.</BO_TFEndTip>
+	<BO_TFEndNow>Encerrar agora</BO_TFEndNow>
+	<BO_TFRemoveTip>Tira {0} desta força-tarefa (volta à prioridade anterior).</BO_TFRemoveTip>
+	<BO_TFNeedWork>Escolha um trabalho.</BO_TFNeedWork>
+	<BO_TFNeedPawn>Nenhum colono marcado pode fazer o trabalho escolhido.</BO_TFNeedPawn>
+	<BO_TFSummary>{0} colonos em {1} por {2}</BO_TFSummary>
+	<BO_TFStart>Iniciar</BO_TFStart>
+	<BO_TFNothing>Nada para mudar: nenhum colono marcado pode fazer o trabalho escolhido.</BO_TFNothing>
+	<BO_TFStarted>Força-tarefa iniciada ({0}): {1} colonos por {2}.</BO_TFStarted>
+	<BO_TFEnded>Força-tarefa terminou ({0}): {1} colonos voltaram à prioridade anterior.</BO_TFEnded>
+	<BO_TFEndedEarly>Força-tarefa encerrada ({0}): {1} colonos voltaram à prioridade anterior.</BO_TFEndedEarly>
+	<BO_TFKept>{0} mantiveram uma prioridade que você mudou à mão.</BO_TFKept>
+</LanguageData>

@@ -1,0 +1,56 @@
+[h1]Colony Organizer[/h1]
+[b]Stop scrolling through 200-line "Add bill" menus.[/b] Colony Organizer replaces the workbench recipe list with a searchable, grouped catalog that shows stats, ingredients and how many batches your stockpile can actually make. It adds a better bill queue on top, plus a few colony tools: temporary work task forces, baby protection for auto slaughter and pinned resources.
+
+[h2]Recipe window[/h2]
+[list]
+[*]Recipes grouped in a tree: weapons (melee, ranged by type, grenades, throwing), ammunition by caliber, apparel by body part, plus meals, drugs, medicine, processing, mechanoids and the rest by category. Long groups get a third level: ranged by type (pistols, rifles, snipers, machine guns...), head and torso by type, robot and gem families. Favorites and recent recipes on top.
+[*]Sortable stat columns (damage, DPS, range, armor, work, skill, value) with bars relative to the best recipe of the bench. The skill turns red when nobody on the map has it.
+[*]Search by name, mod, material or category, with prefixes: @category, %layer or body part, #mod, +bonus. Minimum filters and "available first". Keyboard: arrows, Enter adds, Shift keeps the window open, Ctrl+F searches.
+[*][b]Bonuses and effects[/b]: what an item does beyond its combat stats. Covers stats when worn or equipped (mechanitor bandwidth, psychic sensitivity, move speed...), granted abilities and charges, shields, worn hediffs, implant efficiency, mech bandwidth cost, and drug and food effects. Shown in the details, in compare, as a list marker and as sortable columns; search them with "+" (+bandwidth).
+[*]Detail panel: ingredients you have vs. need, armor for every material, and a side-by-side compare for up to 3 recipes with "Differences". Pick a material and the stats, value and "can make" follow it. Click an ingredient to open its info, find it on the map or make it at another bench.
+[*][b]Can make N[/b]: batches your stored resources allow, the limiting ingredient, and a "Max" button.
+[*]Bill options before adding: do X times / until you have X / forever, quantity presets (1x, 5x, 25x, 50x, in whole batches for "until X"), Ctrl x10 and Shift x100 (your game keys), several bills at once, material.
+[*]Locked or removed recipes never show up.
+[/list]
+
+[h2]Bills and benches[/h2]
+[list]
+[*]Compact bill tab: queue, recipe list and details in the vanilla tab, with its own paste button and close button.
+[*]Bill queue as cards: drag to reorder, pause, copy, duplicate, change material. Click a card to see its recipe. "Until X" shows how many you already have, and its +/- moves by whole batches.
+[*][b]Copy queue[/b]: copy a whole bench queue and paste it on another bench. Batch actions: pause or resume all, clear finished, clear the queue.
+[*]Queue templates, saved across all your saves.
+[*][b]Link bench[/b]: two or more benches of the same type share one queue.
+[*]Optional "Bills" button on the bottom bar: every bench at once, where you also set bench priority (e.g. fabrication bench before smithy).
+[/list]
+
+[h2]Work task force[/h2]
+[list]
+[*]A "Task force" button on the Work tab raises one or more work types on many colonists for a while: for example everyone on Handling at 1 for 6 hours when a raid broke the pen fence and the animals are running off the map.
+[*]Pick the work types, the priority, the duration (1 hour to 3 days) and the colonists. Everyone who can do the work starts checked, with their current priority and skill shown.
+[*]When the time is over, each colonist goes back to the priority they had. A priority you change by hand in the meantime is kept.
+[*]End it early with "End", or take a single colonist out. Saved with the game.
+[/list]
+
+[h2]Animals[/h2]
+[list]
+[*][b]Protect babies from auto slaughter[/b]: a baby gives only about 20% of an adult's meat. A "Babies" column in the vanilla auto slaughter window keeps babies out of slaughter and out of the limits, with "Allow slaughter" per animal.
+[/list]
+
+[h2]Resources[/h2]
+[list]
+[*]Organized resource list on the left: names, search, sorting, collapsible categories.
+[*]Ctrl+click to pin a resource: stock, minimum alert and the recipes that use it.
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*][b]Combat Extended[/b] (optional): armor in mm RHA / MPa, ammo stats and the weapons that use each round.
+[*][b]Nice Bill Tab[/b]: use the "Recipes" button on any workbench while its tab replacement is on.
+[*][b]Dubs Mint Menus[/b]: works alongside.
+[*]Small benches keep the vanilla menu (threshold in mod settings). The extras (compact tab, linked benches, task force, baby column, resource list) can each be turned off in the mod settings.
+[/list]
+
+[b]Requires:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
+[b]Load order:[/b] after Harmony and the mods above (sorted automatically).
+[b]Versions:[/b] RimWorld 1.6 and 1.7
+[b]Languages:[/b] English, Portuguese (Brazil)

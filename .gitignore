@@ -1,0 +1,7 @@
+# build output (rebuild with build.ps1)
+Bin/**/Assemblies/*.dll
+obj/
+*.pdb
+Thumbs.db
+# assets baked by the game (Waylith) on Workshop upload
+1.6/Assets.zip*

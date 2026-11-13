@@ -1,0 +1,40 @@
+<Project>
+  <!-- One build for both game versions (build.ps1): net472 = RimWorld 1.6 -> Bin/1.6, net10.0 = RimWorld 1.7 (Waylith) -> Bin/1.7.
+       Game references come from Krafs.Rimworld.Ref (no game install needed); Harmony from the Steam workshop folder.
+       Same layout as MountedArms (see ../MountedArms/Docs/TOOLING.md). No Combat Extended reference: everything CE is read by stat/def name. -->
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <TargetFrameworks>net472;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <NoWarn>$(NoWarn);CS1701;CS1702;CS1684</NoWarn>
+    <ModRoot>$(MSBuildThisFileDirectory)</ModRoot>
+    <ModBin Condition="'$(ModBin)' == ''">$(ModRoot)Bin</ModBin>
+    <ModBinDir>$([MSBuild]::EnsureTrailingSlash('$(ModBin)'))</ModBinDir>
+    <BaseIntermediateOutputPath>$(ModRoot)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\$(TargetFramework)\</IntermediateOutputPath>
+    <Workshop Condition="'$(Workshop)' == ''">F:\Steam\steamapps\workshop\content\294100</Workshop>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+    <RimWorldVersion>1.6</RimWorldVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <RimWorldVersion>1.7</RimWorldVersion>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4985-unstable" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(Workshop)\2009463077\$(RimWorldVersion)\Assemblies\0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

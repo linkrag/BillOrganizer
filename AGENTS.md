@@ -1,0 +1,84 @@
+# AGENTS.md — Bill Organizer (guia para agentes de código)
+
+Leia este arquivo inteiro antes de mexer em qualquer coisa. Visão geral para humanos: `README.md`. Estado e testes pendentes: `Docs/STATUS.md`. Decisões: `Docs/DECISIONS.md`. Linha do tempo: `Docs/HISTORY.md`.
+
+## O que é
+Mod de RimWorld **1.6 e 1.7** (`packageId: linkrag.billorganizer`, autor Felipe). Nome de exibição "Colony Organizer" (packageId e pasta continuam Bill Organizer). Troca o menu "Adicionar tarefa" das bancadas por uma janela de três painéis (árvore de grupos, lista com colunas de stats, detalhe/comparar) e põe um botão **Receitas** em toda bancada do jogador. Requer Harmony. Combat Extended (CE) é opcional e lido por reflexão (sem referência à DLL).
+
+## Quem é o usuário e como trabalhar com ele
+- Felipe, brasileiro. **Responda em português (BR)**, conciso e direto. Engenheiro Java/Spring/Kafka, modder de RimWorld com vários mods; testa no jogo e envia o `Player.log` e screenshots.
+- Ele verifica e corrige as suas respostas. **Separe o que foi verificado (código, IL descompilado, log) do que é hipótese**; diga "não testei" quando for o caso. Você **não consegue rodar o jogo nem ver a janela**: entregue pronto para teste e peça log + screenshot.
+- Ele joga com ~190 mods (VWE, VAE, CE, VCE, Rimatomics...), 1.7. Gosta do visual do Nice Bill Tab e do Dubs Mint Menus, mas **não copiamos código nem arte deles** (ver `Docs/DECISIONS.md`).
+- **Regra obrigatória:** toda implementação ou modificação atualiza **no mesmo passo** README, `Docs/STATUS.md` (testado x não testado), `DECISIONS`, `HISTORY`, este `AGENTS.md` e o `CLAUDE.md` (deste mod e o do workspace `_dev/src/`, se valer para o workspace). Diga na resposta final quais docs foram atualizados.
+
+## Estrutura
+```
+About/About.xml, LoadFolders.xml   v1.6: /, 1.6, Bin/1.6 ; v1.7: /, 1.6, Bin/1.7 (conteúdo comum em 1.6/, DLL por versão)
+1.6/Languages/{English,PortugueseBrazilian}/Keyed/BillOrganizer.xml   TODO texto de jogador (chaves BO_*), EN e PT-BR
+1.6/Textures/BillOrganizer/        Catalog.png (ícone do botão e da barra: prancheta com checklist) e UI/*.png (glifos brancos tingidos em jogo)
+Source/                            C# (BillOrganizer.csproj)
+  BillOrganizerMod.cs   Mod + ModSettings (integração, botão, favoritos, recentes, memória por bancada) + tela de opções
+  Hook.cs               Harmony transpiler em BillStack.DoListing: troca `new FloatMenu(list)` por OpenPicker (nossa janela ou o FloatMenu original)
+  Patch_Gizmo.cs        postfix em Building.GetGizmos: botão "Receitas" nas Building_WorkTable do jogador
+  NiceCompat.cs         lê por reflexão NiceBillTab.Settings.EnabledMod (a troca da aba do Nice está ligada?)
+  RecipeEntry.cs        dados de cada receita: classificação, stats, ingredientes, armadura por material, AddBill
+  Grouping.cs           árvore de grupos (fixos para armas/roupas; dinâmicos pelas ThingCategoryDef para munição e "Outros"; Processamento/Mecanoides; IsWeaponProduct/IsGrenade por categoria; DumpGroups = botão "Dev"; RangedSub/HeadSub/TorsoSub/FamilyKey + AddThirdLevel para o 3º nível)
+  Availability.cs       estoque via ResourceCounter (~1x/s) + "dá para fazer N" (EvaluateBatches, pool compartilhado, MakeTip)
+  ResourceList.cs       lista de recursos à esquerda (prefix em ResourceReadoutOnGUI): busca, ordem, categorias recolhíveis, seção Fixados; Failed = volta ao vanilla
+  ResourcePanel.cs      recursos fixados: patches manuais no readout (Ctrl+clique), painel ao lado da lista, PinRecipes (receitas que usam o recurso)
+  Stats.cs              colunas/barras (StatInfo) por tipo de item; Trabalho/Habilidade/Valor valem para todos os grupos; colunas de bônus dinâmicas (labelOverride)
+  Bonus.cs              bônus e efeitos por produto (cache): equippedStatOffsets, comps (habilidade, escudo, SpecialDisplayStats), hediff ao vestir, implante (spawnThingOnRemoved), mecanoide, ingeríveis; alimenta detalhe, Comparar, busca +, marca da lista e colunas
+  (busca: RecipeEntry.MatchesSearch, prefixos @ % # +)
+  CeCompat.cs           Combat Extended por reflexão (ammoSet, penetração, classe da munição, armas que a usam)
+  Patch_BillTab.cs      aba de tarefas compacta (postfix de ITab_Bills.FillTab: fila vanilla + lista de receitas à esquerda, RecipeDetail à direita com cabeçalho e X próprio; desliga com a aba do Nice). Esconde o colar vanilla (clipboard vazio durante o FillTab, `Clipboard` = o efetivo, `Finalizer` devolve) e o X vanilla (`Patch_TabCloseButton`)
+  QueuePanel.cs         fila de um BillStack em cartões (arrastar (ReorderableWidget) + botões subir/descer, modo, +/-, pausar, copiar, "...", colar, templates); usada na janela, em "Tarefas" e na aba compacta (compact = true, no lugar da fila vanilla via Patch_DoListing.Prefix)
+  BillCard.cs           helpers do cartão: ícone do produto, chip de material (MatInfo), menu para trocar o material de uma tarefa da fila, Dialog_BillConfig, ciclo de modo
+  Templates.cs          BillTemplate + arquivo Config/BillOrganizer_Templates.xml (lido sob demanda), Dialog_NameTemplate, Window_Templates
+  MainTabWindow_BenchBills.cs   janela "Tarefas" da barra inferior (1.6/Defs/MainButtons.xml, escondida por padrão) + GlobalButton
+  BenchLink.cs          link de bancadas: BillLinkManager (GameComponent, salvo no save), polling por assinatura, botão Linkar/Desfazer, Patch_IterationCompleted
+  BenchPriority.cs      prioridade por bancada (GameComponent salvo) + postfix em WorkGiver_Scanner.GetPriority; UI +/- em MainTabWindow_BenchBills
+  BenchOrder.cs         reordena os WorkGiver_DoBill do colono por prioridade de bancada, dentro da mesma habilidade (postfix em Pawn_WorkSettings.WorkGiversInOrder*)
+  AutoSlaughterBabies.cs   coluna "Bebês" na janela vanilla de abate automático: IsBaby, MapComponent_SlaughterBabies (salvo no mapa), transpiler no getter AutoSlaughterManager.AnimalsToSlaughter (troca CanAutoSlaughterNow), postfixes no Dialog_AutoSlaughter
+  TargetStepFix.cs      passo de "Até X" = contagem do produto em toda receita (reescreve targetCountAdjustment em Game.FinalizeInit e ao salvar as opções; opção stepByBatch restaura) + metas em lotes inteiros: NormalizeBills (ao carregar) e postfix em BillUtility.MakeNewBill
+  TaskForce.cs          força-tarefa (prioridade de trabalho temporária): TaskForceManager (GameComponent salvo; Start/End/EndMember, restaura só se o colono ainda tem o valor posto), TaskForce/TaskForceMember, Patch_WorkTab (postfix em MainTabWindow_Work.DoWindowContents: botão + status + "Encerrar")
+  Dialog_TaskForce.cs   diálogo da força-tarefa: trabalhos, prioridade, duração, colonos (capazes marcados), ativas com "Encerrar agora" e chip por colono
+  Ui.cs                 paleta, helpers de desenho e texturas (Tex: estrela, setas, mais, check, pin, duplicate, link, unlink) + texto adaptável: FitName/NameFit (nome sem verbo, corte no meio com o lote), Compact (1.2k), Thousands
+  Window_RecipePicker.cs   a janela (árvore/lista)
+  RecipeDetail.cs       painel de detalhe + comparar + opções da tarefa; usado pela janela e pela aba compacta (o host passa add/select/markDirty)
+build.ps1, Directory.Build.props   build das duas versões (SDK .NET 10; mesmo esquema do ../MountedArms, ver ../MountedArms/Docs/TOOLING.md)
+tools/gen_icon.py, gen_ui_tex.py   geram as texturas (PIL)
+Docs/                              STATUS, DECISIONS, HISTORY
+tools/deploy.ps1         publica a cópia limpa em RimWorld/Mods/<mod> (build.ps1 chama)
+tools/gen_preview.py     gera About/Preview.png (thumb da Oficina e do menu de mods)
+Docs/WORKSHOP_DESCRIPTION.txt   descrição da Oficina (BBCode, inglês)
+```
+**Fonte x publicado:** esta pasta (`RimWorld/_dev/src/BillOrganizer`) é o fonte. `RimWorld/Mods/BillOrganizer` é só a cópia que o jogo carrega e a Oficina recebe (About, LoadFolders.xml, 1.6, Bin), gerada por `tools/deploy.ps1` (o `build.ps1` chama no fim). Nunca edite em `Mods/`. Mudou só XML/textura/Keyed: rode `powershell -File tools/deploy.ps1`. Oficina: `Docs/WORKSHOP_DESCRIPTION.txt` (colar à mão na página) e `tools/gen_preview.py` (thumb). Ver `../MountedArms/Docs/TOOLING.md`.
+
+
+## Regras de ouro
+1. **O picker nunca pode quebrar o menu vanilla.** Qualquer exceção em `OpenPicker` cai no `FloatMenu` original; o transpiler só troca a chamada se achar exatamente 1 construtor `FloatMenu(List)`, senão loga aviso e deixa o jogo como está.
+2. **Nada de Unicode decorativo em texto** (estrela, setas, ≥, —): a fonte do jogo não garante. Use as texturas `Tex.*` ou ASCII ("-").
+3. **Textos de jogador sempre em Keyed EN e PT-BR** (`BO_*`). O script que gerou os dois arquivos é o jeito mais seguro de editá-los em massa; valide o XML depois (`lxml`).
+4. **CE só por reflexão** (`CeCompat`), tudo null-safe: campo ausente vira "-", nunca exceção. Não adicione referência à DLL do CE.
+5. **Receitas vêm de `bench.def.AllRecipes` em runtime** (cobre `recipeMaker` e a munição que o CE cria no código); nunca de XML.
+6. **Código compila em `net472` (1.6) e `net10.0` (1.7).** Não use API que só exista numa delas; rode `powershell -File build.ps1` (jogo fechado; `-Out <pasta>` só valida a compilação) antes de entregar.
+7. **ResourceCounter.GetCount** loga erro para def não contada: só chame para `def.CountAsResource` (já feito em `Availability`).
+8. IMGUI: botões invisíveis que se sobrepõem — desenhe os de cima (estrela, "+") **antes** do clique da linha; escala/larguras não foram vistas em jogo.
+9. Não mexa nos internos do Nice Bill Tab ou do Dubs (DLLs fechadas, outros autores). Compat com o Nice = botão na bancada.
+10. **Texto que pode cortar nunca tem largura fixa**: meça com `Text.CalcSize`, dê o espaço que sobra, use formas candidatas do maior para o menor e só então corte (`Ui.NameFit/TextFit`, chip de modo do `QueuePanel`), sempre com o texto inteiro na tooltip. Estado e cor andam juntos (cor + palavra/tooltip). Um ícone, um significado. Dicas de uso ficam em tooltip, não em frase cortada.
+
+## Compatibilidade (verificada descompilando em 1.7)
+- **Nice Bill Tab** troca `ITab_Bills.FillTab` (prefix retorna false) enquanto `NiceBillTab.Settings.EnabledMod` é true: `DoListing` não roda, então o botão da bancada é a entrada. Desligando a troca dele, o "Adicionar tarefa" abre a nossa janela.
+- **Dubs Mint Menus**: prefix void em `DoListing` (painel lateral); convive.
+- Nice Health/Inventory/Plants/Research/Hediff Tab: não tocam em bills.
+
+## Ferramentas úteis
+- **ilspycmd** (decompilar o jogo/mods): `dotnet tool install ilspycmd --tool-path <pasta>` (não está instalado globalmente); rodar com `DOTNET_ROLL_FORWARD=Major`; DLL do jogo 1.7 em `F:\Steam\steamapps\common\RimWorld\Assembly-CSharp.dll`, referência 1.6 no cache do NuGet (`krafs.rimworld.ref`).
+- Não faça grep/find recursivo em toda a pasta Steam (timeout); fique em `workshop/content/294100`.
+- Validar XML: `python -c "import lxml.etree as e; e.parse('arquivo')"` (sem `-I`).
+
+## Estado atual
+Veja `Docs/STATUS.md`. **Último (13/nov, fim): o passo de "Até X" é o que uma construção produz (`RecipeEntry.TargetStepOf` = `products[0].count`; o `targetCountAdjustment` 20 do CE fazia o 81mm x5 andar de 20). Depois, para todos os itens e todas as UIs: `TargetStepFix.cs` reescreve o `targetCountAdjustment` de toda receita com produto (opção `stepByBatch`). Rodada 3 (auditoria por agentes): o valor da meta também fica em lotes inteiros: `AddOptions.qtyAuto`, `RecipeEntry.SnapTarget/SetTarget`, `BillCard.CycleMode`, Máx arredondado, `Patch_MakeNewBill_TargetStep` (tarefa nova) e `TargetStepFix.NormalizeBills` (tarefas salvas, ao carregar). Instalado, NÃO testado.** Antes (13/nov): força-tarefa, a prioridade de trabalho temporária (`TaskForce.cs` + `Dialog_TaskForce.cs`, botão na aba Trabalho vanilla, opção `taskForce`). Restaura o valor original no fim, a não ser que o jogador tenha mudado à mão, e dá para encerrar antes ou tirar um colono. A descrição da Oficina e o `About.xml` foram revisados com tudo que faltava. Compila em 1.6 e 1.7, instalado. Confirmado em jogo pelo usuário (13/nov, todos os testes: início, status, "End", mudança manual no meio, fim natural, salvar/carregar, "Interromper").** Antes (13/nov): abate automático protege bebês (`AutoSlaughterBabies.cs`: bebê rende ~20% da carne; coluna "Bebês" com "Permitir abate" por animal, padrão protegido, bebê protegido fora dos limites; opção `slaughterBabies`). Confirmado em jogo pelo usuário (13/nov, visual e abate). O total menor que a soma vem do Zoology (lactantes), não do nosso código.** Antes (12/nov): aba compacta com colar e X próprios. O colar vanilla é escondido esvaziando o clipboard durante o `FillTab` (`Patch_BillTab.Clipboard` + `Finalizer`) e o X vanilla por `Patch_TabCloseButton` (prefix em `Widgets.CloseButtonFor`, só na aba compacta). Os nossos são `QueuePanel.PasteButton` e o cabeçalho da direita. Receita indisponível nunca aparece: o clique na fila só avisa (`RecipeEntry.SayUnavailable`, aba e janela; saiu a entrada só de detalhe). Confirmado em jogo (12/nov); o caso da receita indisponível não foi reproduzido.** Antes (11/nov, noite): bônus e efeitos dos itens (`Bonus.cs`, pedido da Oficina: banda de mecanoides etc.) no detalhe, Comparar, busca `+`, marca na lista e colunas; confirmado em jogo (12/nov). Correções de 12/nov (colunas seguem a busca, nomes do Comparar, sem armadura zerada) confirmadas em jogo (12/nov).** Antes (11/nov): presets voltaram a "definir e somar" com -/+ de 1 unidade (`RecipeDetail.qtyMark`), Ctrl/Shift pelas teclas do jogo com tooltip gerada (`Ui.StepMult/StepKeysTip/StepUp/StepDown`; o padrão vanilla é Ctrl x10, Shift x100), +/- do cartão "Até X" por lote (`RecipeEntry.TargetStepOf`), seleção da fila tolerante (`RecipeEntry.ForBill`; `ForRecipe` removido em 12/nov, log `Queue click` no modo dev) + correções da revisão por agentes. Confirmado em jogo pelo usuário (12/nov).** Antes (10/nov): opções do mod com `maxOneColumn` (sumiam ao expandir uma seção; NÃO testado) e presets de quantidade em múltiplos do lote com o preset como passo do -/+ (`RecipeDetail.QtyMults/qtyStepMult`; confirmados em jogo); trocar de modo zera o valor. Depois: "Copiar fila" no menu Ações (`Templates.CopyQueue/TryPasteQueue`; o Colar cola a última cópia, fila ou tarefa); instalado, NÃO testado.** Antes (5/nov, 16:4x): nomes das famílias confirmados em jogo; nomes de subgrupo encurtados no Keyed para caber na árvore (sem código).** Antes (5/nov, 16:25): a rodada das 15:25 foi confirmada em jogo; os nomes das famílias agora perdem as palavras comuns (`FamilyLabels`). Instalado, NÃO testado.** Antes (5/nov, 15:25): 3º nível (`Grouping.AddThirdLevel`: Distância por tipo, Cabeça e Torso; famílias de robôs e gemas) e stats do material escolhido no detalhe; instalado, NÃO testado.** Antes (5/nov, 15:18): a rodada das 14:36 foi confirmada em jogo. Depois vieram: `Memo.cfgAuto`, o "dá para fazer" com o material escolhido, Processamento (`ProcIn`/`IsSalvage`/blocos), Rituais, Arremesso e categoria de mod sob Weapons, nome + (mod) para nomes repetidos, e o dump com verbo/techLevel/classe. Instalado, NÃO testado.** Antes (5/nov, 14:36): 4 correções ("Até X" em lotes, clique no cartão inteiro da fila, sem "No material allowed" para ingrediente fixo, regras de grupo revisadas por workflow de agentes + botão "Dev" que grava os grupos no log) instaladas, NÃO testadas.** Antes (5/nov, tarde): rodada UX/UI (chip adaptável `130/1000`, estados Concluída/Agora não, nomes adaptáveis, "Lotes", janela "Tarefas" com cabeçalhos, opções agrupadas, PT-BR vincular/modelo/desafixar), instalada em `Bin/`; 1º teste ok (sem erro no log), com correções às 11:25, 11:36, 12:01 e a 4ª (FitName reforçado e verificado: corte em palavra que preserva o "(tipo)", filtro de munição em menu, ícone de Desvincular, piso de 190 do nome, tooltip fora do menu, "Used by:" do CE fora da descrição) instaladas e NÃO testadas.** Antes (5/nov): prioridade de bancada entre tipos da mesma habilidade (`BenchOrder`), confirmado em jogo pelo usuário (5/nov). Antes (4/nov): clique na fila abre o detalhe (`onSelect` do `QueuePanel`), "Até X" com estoque, prioridade de bancada (`BenchPriority`); instalado, não testado. Antes (3/nov): fila em cartões (`BillCard`). Resumo: v2 funciona no jogo; a rodada de melhorias (3/nov: bugs, visual, fila em lote, presets, **link de bancadas**) compila nas duas versões e está instalada, **sem teste no jogo**.
+
+
+

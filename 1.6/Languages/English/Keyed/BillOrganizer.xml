@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BO_GizmoLabel>Recipes</BO_GizmoLabel>
+	<BO_GizmoDesc>Open the recipe window of this bench: grouped recipes, search, what the stock allows, and the bill queue.</BO_GizmoDesc>
+	<BO_SetEnabled>Use the grouped recipe window</BO_SetEnabled>
+	<BO_SetEnabledTip>Off: the vanilla "Add bill" menu everywhere and no workbench button.</BO_SetEnabledTip>
+	<BO_SetIntegration>The "Add bill" button of the bill tab:</BO_SetIntegration>
+	<BO_SetIntAuto>Opens this window</BO_SetIntAuto>
+	<BO_SetIntAutoTip>Only works while no other mod replaces the whole bill tab (Nice Bill Tab does, while its tab replacement is on).</BO_SetIntAutoTip>
+	<BO_SetIntGizmo>Keep the original menu (this window opens only from the workbench button)</BO_SetIntGizmo>
+	<BO_SetIntGizmoTip>Use this to keep whatever menu another mod gives you and still have the catalog.</BO_SetIntGizmoTip>
+	<BO_SetGizmo>Workbench button "Recipes":</BO_SetGizmo>
+	<BO_SetGizmoNice>Only while Nice Bill Tab has replaced the bill tab</BO_SetGizmoNice>
+	<BO_SetGizmoAlways>Always</BO_SetGizmoAlways>
+	<BO_SetGizmoNever>Never</BO_SetGizmoNever>
+	<BO_SetMin>Use this window from {0} recipes on</BO_SetMin>
+	<BO_SetKeepOpen>Keep the window open after adding a bill</BO_SetKeepOpen>
+	<BO_SetKeepOpenTip>Hold Shift while clicking to do this once.</BO_SetKeepOpenTip>
+	<BO_SetNiceOn>Nice Bill Tab is replacing the bill tab, so its "Add bill" is used. Open this window with the workbench button "Recipes".</BO_SetNiceOn>
+	<BO_SetNiceOff>Nice Bill Tab is active but its tab replacement is off: "Add bill" opens this window.</BO_SetNiceOff>
+	<BO_NodeFavorites>Favorites</BO_NodeFavorites>
+	<BO_NodeRecent>Recent</BO_NodeRecent>
+	<BO_NodeAll>All</BO_NodeAll>
+	<BO_NodeWeapons>Weapons</BO_NodeWeapons>
+	<BO_NodeMelee>Melee</BO_NodeMelee>
+	<BO_NodeRanged>Ranged</BO_NodeRanged>
+	<BO_NodeGrenades>Grenades</BO_NodeGrenades>
+	<BO_NodeAmmo>Ammunition</BO_NodeAmmo>
+	<BO_NodeShells>Shells</BO_NodeShells>
+	<BO_NodeApparel>Apparel</BO_NodeApparel>
+	<BO_NodeHead>Head</BO_NodeHead>
+	<BO_NodeTorso>Torso</BO_NodeTorso>
+	<BO_NodeLegs>Legs</BO_NodeLegs>
+	<BO_NodeHands>Hands</BO_NodeHands>
+	<BO_NodeFeet>Feet</BO_NodeFeet>
+	<BO_NodeAccessories>Belts and accessories</BO_NodeAccessories>
+	<BO_NodeOther>Other</BO_NodeOther>
+	<BO_NoRecipes>This workbench has no recipe available right now.</BO_NoRecipes>
+	<BO_StackFull>Bill list full</BO_StackFull>
+	<BO_Added>Added: {0}</BO_Added>
+	<BO_Hint>Double click or +: add. Shift+click: compare.</BO_Hint>
+	<BO_FilterStock>With materials</BO_FilterStock>
+	<BO_FilterStockTip>Hide recipes the map does not have the materials for.</BO_FilterStockTip>
+	<BO_SortAvail>Available first</BO_SortAvail>
+	<BO_SortAvailTip>Recipes you can make now come first.</BO_SortAvailTip>
+	<BO_Min>Min {0}:</BO_Min>
+	<BO_StockReady>Materials available</BO_StockReady>
+	<BO_StockMissing>Missing materials</BO_StockMissing>
+	<BO_StockUnknown>Stock unknown (an ingredient is not a counted resource)</BO_StockUnknown>
+	<BO_ColName>Recipe</BO_ColName>
+	<BO_FavoriteTip>Favorite</BO_FavoriteTip>
+	<BO_AddTip>Add bill (Shift keeps the window open)</BO_AddTip>
+	<BO_InStock>In stock: {0}</BO_InStock>
+	<BO_NoMatch>No recipe matches.</BO_NoMatch>
+	<BO_PickOne>Select a recipe to see its details, or pin several to compare them.</BO_PickOne>
+	<BO_AddBill>Add bill</BO_AddBill>
+	<BO_PinTip>Pin to compare (up to 3)</BO_PinTip>
+	<BO_MissingMat>Missing materials on the map.</BO_MissingMat>
+	<BO_NoSkill>No colonist has the required skill.</BO_NoSkill>
+	<BO_SecStats>Stats</BO_SecStats>
+	<BO_AmmoPick>Stats with:</BO_AmmoPick>
+	<BO_BestOnBench>Best of this kind on this bench: {0}</BO_BestOnBench>
+	<BO_SecMaterials>Materials</BO_SecMaterials>
+	<BO_MoreMaterials>+{0} more materials</BO_MoreMaterials>
+	<BO_BestInStockHint>Highlighted: the best material you have enough of.</BO_BestInStockHint>
+	<BO_SecIngredients>Requirements</BO_SecIngredients>
+	<BO_SingleMaterial>One material is used for the whole item (no mixing).</BO_SingleMaterial>
+	<BO_SecUsers>Used by</BO_SecUsers>
+	<BO_SecCompare>Compare</BO_SecCompare>
+	<BO_Clear>Clear</BO_Clear>
+	<BO_NoCommonStats>These recipes share no stats to compare.</BO_NoCommonStats>
+	<BO_Stat_dps>DPS</BO_Stat_dps>
+	<BO_StatTip_dps>Damage per second (aiming time, cooldown and burst included).</BO_StatTip_dps>
+	<BO_Stat_damage>Damage</BO_Stat_damage>
+	<BO_StatTip_damage>Damage of one hit or shot.</BO_StatTip_damage>
+	<BO_Stat_pen>Penetration</BO_Stat_pen>
+	<BO_StatTip_pen>Armor penetration.</BO_StatTip_pen>
+	<BO_Stat_range>Range</BO_Stat_range>
+	<BO_StatTip_range>Range in cells.</BO_StatTip_range>
+	<BO_Stat_burst>Burst</BO_Stat_burst>
+	<BO_StatTip_burst>Shots per burst.</BO_StatTip_burst>
+	<BO_Stat_mag>Magazine</BO_Stat_mag>
+	<BO_StatTip_mag>Rounds per magazine (Combat Extended).</BO_StatTip_mag>
+	<BO_Stat_users>Guns</BO_Stat_users>
+	<BO_StatTip_users>How many weapons can load this ammunition (Combat Extended).</BO_StatTip_users>
+	<BO_Stat_sharp>Sharp</BO_Stat_sharp>
+	<BO_StatTip_sharp>Armor against sharp damage. With several materials it is the best one; the detail shows the range.</BO_StatTip_sharp>
+	<BO_Stat_blunt>Blunt</BO_Stat_blunt>
+	<BO_StatTip_blunt>Armor against blunt damage.</BO_StatTip_blunt>
+	<BO_Stat_heat>Heat</BO_Stat_heat>
+	<BO_StatTip_heat>Armor against heat.</BO_StatTip_heat>
+	<BO_Stat_cold>Cold</BO_Stat_cold>
+	<BO_StatTip_cold>Insulation against cold.</BO_StatTip_cold>
+	<BO_Stat_work>Work</BO_Stat_work>
+	<BO_StatTip_work>Work amount for one run of the recipe (the number on the info card). Faster colonists finish sooner.</BO_StatTip_work>
+	<BO_Stat_skill>Skill</BO_Stat_skill>
+	<BO_StatTip_skill>Highest minimum skill level the recipe asks for. Red: no colonist on the map has it.</BO_StatTip_skill>
+	<BO_Stat_value>Value</BO_Stat_value>
+	<BO_StatTip_value>Market value of one item of the product (default material).</BO_StatTip_value>
+	<BO_Stat_make>Batches</BO_Stat_make>
+	<BO_StatTip_make>How many batches of this recipe the stored resources allow (same counts as the resource list on the left).</BO_StatTip_make>
+	<BO_CanMake>Can make {0} ({1} items)</BO_CanMake>
+	<BO_CanMakeBy>, limited by {0}</BO_CanMakeBy>
+	<BO_CanMakeTip>Can make: {0} batches ({1} items).</BO_CanMakeTip>
+	<BO_CanMakeLimit>Limit: {0} (you have {1}, each batch needs {2}).</BO_CanMakeLimit>
+	<BO_CanMakeUnknown>Unknown: none of the ingredients is a counted resource.</BO_CanMakeUnknown>
+	<BO_PinPanelTitle>Pinned ({0})</BO_PinPanelTitle>
+	<BO_PinPanelTip>Pinned resources. Click to collapse. Ctrl+click a resource in the list on the left to pin or unpin it; right-click a row for the minimum.</BO_PinPanelTip>
+	<BO_PinRowTip>Right-click: minimum / unpin.</BO_PinRowTip>
+	<BO_PinMinTip>Minimum: {0} (turns red below it).</BO_PinMinTip>
+	<BO_PinUsedBy>Recipes that use it (batches the stock allows):</BO_PinUsedBy>
+	<BO_PinMoreRecipes>... and {0} more</BO_PinMoreRecipes>
+	<BO_PinSetMin>Set minimum...</BO_PinSetMin>
+	<BO_PinClearMin>Clear minimum</BO_PinClearMin>
+	<BO_PinRemove>Unpin</BO_PinRemove>
+	<BO_PinMinLabel>Minimum {0}: {1}</BO_PinMinLabel>
+	<BO_SetPinPanel>Pinned resources panel (Ctrl+click in the resource list)</BO_SetPinPanel>
+	<BO_SetPinPanelTip>Shows the pinned resources next to the resource list on the left, with stock, minimum alert and the recipes that use each one.</BO_SetPinPanelTip>
+	<BO_Max>Max</BO_Max>
+	<BO_MaxTip>Everything the stock allows: {0} batches ({1} items).</BO_MaxTip>
+	<BO_SecProduction>Production</BO_SecProduction>
+	<BO_IngredientsValue>Ingredients are worth about {0}.</BO_IngredientsValue>
+	<BO_SearchHelp>Several words must all match. Plain words search the name, mod, material, category, layer, tag and research. Prefixes: @ category (@ammo), % layer or body part (%head), # mod (#royalty), + bonus or effect (+bandwidth, +psychic). Ctrl+F focuses the search.</BO_SearchHelp>
+	<BO_AddedN>Added {0}x: {1}</BO_AddedN>
+	<BO_QueueTab>Queue {0}/{1}</BO_QueueTab>
+	<BO_QueueTabTip>Show the bills already queued on this bench: drag to reorder, pause, copy, templates.</BO_QueueTabTip>
+	<BO_SetIngIcons>Ingredient icons under each recipe name</BO_SetIngIcons>
+	<BO_SetAutoName>Name the bill after the picked material</BO_SetAutoName>
+	<BO_SetAutoNameTip>Only when a material is picked in the detail panel: the bill is named "Recipe (Material)".</BO_SetAutoNameTip>
+	<BO_SetStepByBatch>"Until X" steps by what one craft makes (all bills)</BO_SetStepByBatch>
+	<BO_SetStepByBatchTip>The -/+ of "Until X" adds or removes what one craft makes (5 for "mortar shells x5", 200 for "cartridge x200"), also in the vanilla bill list and in other mods. Some mods set a fixed step (Combat Extended uses 20 for every ammo). Off: the original steps come back.</BO_SetStepByBatchTip>
+	<BO_SetGlobalButton>"Bills" button on the bottom bar (all benches, queues, templates)</BO_SetGlobalButton>
+	<BO_SetGlobalButtonTip>Applies when you close this window.</BO_SetGlobalButtonTip>
+	<BO_SetWinW>Recipe window width: {0}</BO_SetWinW>
+	<BO_SetWinH>Recipe window height: {0}</BO_SetWinH>
+	<BO_SecBillOptions>Bill options</BO_SecBillOptions>
+	<BO_ModeDefault>Default</BO_ModeDefault>
+	<BO_ModeDefaultTip>Like the vanilla menu: do once.</BO_ModeDefaultTip>
+	<BO_ModeCount>Do X times</BO_ModeCount>
+	<BO_ModeCountTip>Make the amount you set, then stop.</BO_ModeCountTip>
+	<BO_ModeTarget>Until X</BO_ModeTarget>
+	<BO_ModeTargetTip>Keep making it until you have X in stock.</BO_ModeTargetTip>
+	<BO_ModeForever>Forever</BO_ModeForever>
+	<BO_ModeForeverTip>Keeps making it while there are materials.</BO_ModeForeverTip>
+	<BO_Times>Copies</BO_Times>
+	<BO_TimesTip>How many copies of this bill to add at once (up to the free space of the bill list).</BO_TimesTip>
+	<BO_Material>Material</BO_Material>
+	<BO_MatAny>Any (default)</BO_MatAny>
+	<BO_MaterialTip>Restrict the bill to one material. The number in the menu is the stock.</BO_MaterialTip>
+	<BO_MatSortTip>Order the materials by this stat.</BO_MatSortTip>
+	<BO_IngClickTip>Click: info, find on the map, queue it on another bench.</BO_IngClickTip>
+	<BO_IngInfo>Info card</BO_IngInfo>
+	<BO_IngFind>Find {0} on the map ({1})</BO_IngFind>
+	<BO_IngFindNone>No {0} on the map</BO_IngFindNone>
+	<BO_IngQueue>Make {0}x {1} on a bench</BO_IngQueue>
+	<BO_IngQueueNone>No bench can make {0} now</BO_IngQueueNone>
+	<BO_IngQueued>{0} queued on {1}.</BO_IngQueued>
+	<BO_DiffOnly>Differences</BO_DiffOnly>
+	<BO_DiffOnlyTip>Hide the stats where all pinned recipes are equal.</BO_DiffOnlyTip>
+	<BO_QueueTitle>Queue {0}/{1}</BO_QueueTitle>
+	<BO_QPaste>Paste</BO_QPaste>
+	<BO_QPasteTip>Paste what was copied last: the whole queue (Copy queue) or one bill (copy button of a card, or of the vanilla bill tab). What does not fit this bench is skipped.</BO_QPasteTip>
+	<BO_QCopyQueue>Copy queue</BO_QCopyQueue>
+	<BO_QCopyQueueTip>Copy every bill of this queue. Paste puts them all on any bench of this game (what does not fit is skipped). To keep a queue across saves, use Save template.</BO_QCopyQueueTip>
+	<BO_QQueueCopied>Queue copied ({0} bills). Use Paste on any bench.</BO_QQueueCopied>
+	<BO_QSaveTpl>Save template</BO_QSaveTpl>
+	<BO_QSaveTplTip>Save this whole queue under a name, to paste on this or another bench, in any save.</BO_QSaveTplTip>
+	<BO_QTemplates>Templates</BO_QTemplates>
+	<BO_QTemplatesTip>Paste a saved queue here (what does not fit this bench is skipped), or manage the templates.</BO_QTemplatesTip>
+	<BO_QueueEmpty>No bills on this bench.</BO_QueueEmpty>
+	<BO_QActions>Actions</BO_QActions>
+	<BO_QActionsTip>Paste, templates, pause all, clear done / all.</BO_QActionsTip>
+	<BO_QDetails>Details: filters, quality, hit points, radius, worker.</BO_QDetails>
+	<BO_QModeTip>Click to switch: Do X times / Until X / Forever. Use - and + for the number.</BO_QModeTip>
+	<BO_MatAnyShort>Any material</BO_MatAnyShort>
+	<BO_MatNone>No material allowed</BO_MatNone>
+	<BO_MatSome>{0} of {1} allowed</BO_MatSome>
+	<BO_MatTipHead>Allowed materials</BO_MatTipHead>
+	<BO_MatClickTip>Click to change the material of this bill.</BO_MatClickTip>
+	<BO_QMoveUp>Move up (Shift: to the top). You can also drag the card.</BO_QMoveUp>
+	<BO_QMoveDown>Move down (Shift: to the bottom). You can also drag the card.</BO_QMoveDown>
+	<BO_QDelete>Delete</BO_QDelete>
+	<BO_QCopy>Copy</BO_QCopy>
+	<BO_QCopied>Copied. Use Paste on any bench.</BO_QCopied>
+	<BO_QDuplicate>Duplicate (copy right below)</BO_QDuplicate>
+	<BO_QPause>Pause</BO_QPause>
+	<BO_QResume>Resume</BO_QResume>
+	<BO_QSuspended>Paused</BO_QSuspended>
+	<BO_QTarget>Until {0}</BO_QTarget>
+	<BO_QCount>{0}x</BO_QCount>
+	<BO_QNotNow>Not now</BO_QNotNow>
+	<BO_QClipEmpty>Nothing copied yet.</BO_QClipEmpty>
+	<BO_TplSaved>Template "{0}" saved ({1} bills).</BO_TplSaved>
+	<BO_TplBusy>Templates are not available while the game loads or saves.</BO_TplBusy>
+	<BO_TplWriteFail>Could not write the template file (see the log).</BO_TplWriteFail>
+	<BO_TplPasted>Pasted from "{1}": {0}</BO_TplPasted>
+	<BO_TplSkippedRecipe>Skipped (not on this bench): {0}</BO_TplSkippedRecipe>
+	<BO_TplSkippedFull>Skipped (list full): {0}</BO_TplSkippedFull>
+	<BO_TplManage>Manage templates...</BO_TplManage>
+	<BO_TplNamePrompt>Template name:</BO_TplNamePrompt>
+	<BO_TplTitle>Bill templates</BO_TplTitle>
+	<BO_TplNone>No template saved yet. Open the queue of a bench and use "Save template".</BO_TplNone>
+	<BO_TplBills>{0} bills</BO_TplBills>
+	<BO_TplRename>Rename</BO_TplRename>
+	<BO_TplDelete>Delete</BO_TplDelete>
+	<BO_TplConfirmDelete>Delete the template "{0}"?</BO_TplConfirmDelete>
+	<BO_NoBenches>No workbench found.</BO_NoBenches>
+	<BO_PickBench>Pick a bench on the left.</BO_PickBench>
+	<BO_OpenRecipes>Recipes</BO_OpenRecipes>
+	<BO_GoToBench>Go to bench</BO_GoToBench>
+	<BO_PinnedTip>Pinned for comparing (see Compare in the detail panel).</BO_PinnedTip>
+	<BO_SetCompactTab>Compact bill tab: recipe list and details</BO_SetCompactTab>
+	<BO_SetCompactTabTip>A wider bill tab: queue and recipe list on the left, recipe details on the right. Off while Nice Bill Tab replaces the tab. Reopen the tab to apply.</BO_SetCompactTabTip>
+	<BO_SetTabW>Compact tab width: {0}</BO_SetTabW>
+	<BO_SetTabH>Compact tab height: {0}</BO_SetTabH>
+	<BO_SetTabQueue>Height of the bill queue in the tab: {0}</BO_SetTabQueue>
+	<BO_TabHint>Double click or +: add</BO_TabHint>
+	<BO_QPauseAll>Pause all</BO_QPauseAll>
+	<BO_QResumeAll>Resume all</BO_QResumeAll>
+	<BO_QClearDone>Clear finished</BO_QClearDone>
+	<BO_QClearAll>Clear queue</BO_QClearAll>
+	<BO_QPauseAllTip>Pauses every bill of this bench (or resumes them all when all are paused).</BO_QPauseAllTip>
+	<BO_QClearDoneTip>Deletes the "do X times" bills that already reached zero.</BO_QClearDoneTip>
+	<BO_QClearAllTip>Deletes every bill of this bench (asks first).</BO_QClearAllTip>
+	<BO_QClearAllConfirm>Delete all {0} bills of this bench?</BO_QClearAllConfirm>
+	<BO_QClearedN>Bills deleted: {0}</BO_QClearedN>
+	<BO_TplOverwrite>A template named "{0}" already exists for this bench. Replace it?</BO_TplOverwrite>
+	<BO_LinkLabel>Link bench</BO_LinkLabel>
+	<BO_LinkDesc>Share the bill queue with another bench of the same type: adding, removing, reordering, pausing or editing a bill on one shows on the other, and "do X times" is counted together. This bench's queue is copied to the one you pick.</BO_LinkDesc>
+	<BO_UnlinkLabel>Unlink ({0})</BO_UnlinkLabel>
+	<BO_UnlinkDesc>Stop sharing the queue. Each bench keeps its own copy of the bills.</BO_UnlinkDesc>
+	<BO_LinkRejectSelf>Pick another bench.</BO_LinkRejectSelf>
+	<BO_LinkRejectDef>Only benches of the same type can be linked.</BO_LinkRejectDef>
+	<BO_LinkRejectMap>The benches must be on the same map.</BO_LinkRejectMap>
+	<BO_LinkRejectFaction>That bench is not yours.</BO_LinkRejectFaction>
+	<BO_LinkRejectSame>These benches are already linked.</BO_LinkRejectSame>
+	<BO_LinkRejectGroups>Both benches are in different link groups. Unlink one of them first.</BO_LinkRejectGroups>
+	<BO_LinkConfirm>Link benches? The bills already on the other bench ({0}) are replaced by a copy of this queue. Unlinking later keeps the copy.</BO_LinkConfirm>
+	<BO_LinkDone>Benches linked ({0}). They now share the same bills.</BO_LinkDone>
+	<BO_UnlinkDone>Bench unlinked.</BO_UnlinkDone>
+	<BO_SetLink>Linked benches (shared queue)</BO_SetLink>
+	<BO_SetLinkTip>Adds a "Link bench" button to workbenches. Turning it off keeps existing links but stops syncing.</BO_SetLinkTip>
+	<BO_ResPinned>Pinned</BO_ResPinned>
+	<BO_ResOther>Other</BO_ResOther>
+	<BO_ResSortCat>Category</BO_ResSortCat>
+	<BO_ResSortQty>Amount</BO_ResSortQty>
+	<BO_ResSortName>Name</BO_ResSortName>
+	<BO_ResSortTip>Sort the resource list: by category (folding sections), by amount or by name.</BO_ResSortTip>
+	<BO_ResFoldTip>Fold or unfold every category.</BO_ResFoldTip>
+	<BO_PinAdd>Pin</BO_PinAdd>
+	<BO_SetResList>Organized resource list on the left (names, sort, categories, search)</BO_SetResList>
+	<BO_SetResListTip>Replaces the icon-and-number resource list with one that shows names, sorts, folds categories and has a search box. Ctrl+click pins a resource to the top. Off = vanilla list.</BO_SetResListTip>
+	<BO_SetResListW>Resource list width: {0}</BO_SetResListW>
+	<BO_SetResSort>Resource list order:</BO_SetResSort>
+	<BO_BenchPrio>Priority</BO_BenchPrio>
+	<BO_BenchPrioTip>Bench priority (-5 to +5). Colonists try the higher one first among benches of the same skill, then the closest. Shift: 5 at a time.</BO_BenchPrioTip>
+	<BO_SetBenchPrio>Bench priority across bench types of the same skill</BO_SetBenchPrio>
+	<BO_SetBenchPrioTip>On: priority also orders different bench types of the same skill (fabrication bench before smithy). Off: it only orders benches of the same type. The Work tab still decides between skills.</BO_SetBenchPrioTip>
+	<BO_QDone>Done</BO_QDone>
+	<BO_QDoneTip>Finished. Use Clear finished, or raise the number to run it again.</BO_QDoneTip>
+	<BO_QCountTip>Do X times: {0} left.</BO_QCountTip>
+	<BO_QTargetTip>Until X: you have {0}, target {1}.</BO_QTargetTip>
+	<BO_QMetTip>Target reached. It runs again when the stock drops below {0}.</BO_QMetTip>
+	<BO_QNotNowTip>Nobody can work on it right now (materials, skill, work area or bench).</BO_QNotNowTip>
+	<BO_StackFullShort>List full</BO_StackFullShort>
+	<BO_QClearedNone>No finished bills.</BO_QClearedNone>
+	<BO_TabHintTip>Click: details. Double click or +: add the bill. Right click: open the full window on that recipe. Shift+click: pin to compare.</BO_TabHintTip>
+	<BO_KeysHelp>Keys: arrows select, Enter adds, Shift+Enter or Shift on + keeps the window open, Ctrl+F searches.</BO_KeysHelp>
+	<BO_AmmoFilter>Rounds:</BO_AmmoFilter>
+	<BO_AmmoFilterTip>Show only this type of round (click again to clear).</BO_AmmoFilterTip>
+	<BO_DescMore>More</BO_DescMore>
+	<BO_DescLess>Less</BO_DescLess>
+	<BO_Range>{0} to {1}</BO_Range>
+	<BO_CanMakeOne>Can make {0}</BO_CanMakeOne>
+	<BO_QtyCount>Times</BO_QtyCount>
+	<BO_QtyTarget>Target</BO_QtyTarget>
+	<BO_MaxTipTarget>Target = what you have ({0}) + what the stock allows ({1}).</BO_MaxTipTarget>
+	<BO_ThousandsSep>,</BO_ThousandsSep>
+	<BO_SecGeneral>General</BO_SecGeneral>
+	<BO_SecWindow>Recipe window</BO_SecWindow>
+	<BO_SecTab>Bill tab</BO_SecTab>
+	<BO_SecBenches>Benches</BO_SecBenches>
+	<BO_SecResources>Resources</BO_SecResources>
+	<BO_SetMinTip>Benches with fewer recipes keep the original "Add bill" menu. 0 = always use this window.</BO_SetMinTip>
+	<BO_ColBench>Bench</BO_ColBench>
+	<BO_ColBills>Bills</BO_ColBills>
+	<BO_ColBillsTip>Bills on the bench: running / total (paused ones do not count as running).</BO_ColBillsTip>
+	<BO_BenchCountTip>{0} running of {1} bills.</BO_BenchCountTip>
+	<BO_NoBenchMatch>No bench matches the search.</BO_NoBenchMatch>
+	<BO_ResNoMatch>No resource matches.</BO_ResNoMatch>
+	<BO_TplFit>{0}: {1} of {2} bills fit</BO_TplFit>
+	<BO_TplNoFit>{0}: not for this bench</BO_TplNoFit>
+	<BO_TplWindowHint>To paste one, open the queue of a bench: Actions, Templates.</BO_TplWindowHint>
+	<BO_AmmoAll>All</BO_AmmoAll>
+	<BO_PresetTip>Set {0} (the button stays marked). Click it again to add {0} more.</BO_PresetTip>
+	<BO_DevDumpGroups>Dev mode: write the group of every recipe of this bench to the log (Player.log).</BO_DevDumpGroups>
+	<BO_DevDumpDone>Recipe groups written to the log.</BO_DevDumpDone>
+	<BO_NodeProcessing>Processing</BO_NodeProcessing>
+	<BO_NodeMechanoids>Mechanoids</BO_NodeMechanoids>
+	<BO_NodeCreatures>Creatures</BO_NodeCreatures>
+	<BO_CanMakeStuffTip>Counting only {0} (you have {1}): the bill will use no other material.</BO_CanMakeStuffTip>
+	<BO_NodeRituals>Rituals</BO_NodeRituals>
+	<BO_NodeThrown>Thrown</BO_NodeThrown>
+	<BO_RcPistol>Pistols</BO_RcPistol>
+	<BO_RcSMG>SMGs</BO_RcSMG>
+	<BO_RcShotgun>Shotguns</BO_RcShotgun>
+	<BO_RcRifle>Rifles</BO_RcRifle>
+	<BO_RcSniper>Snipers</BO_RcSniper>
+	<BO_RcMG>Machine guns</BO_RcMG>
+	<BO_RcHeavy>Heavy weapons</BO_RcHeavy>
+	<BO_RcPrimitive>Primitive</BO_RcPrimitive>
+	<BO_RcNonLethal>Non-lethal</BO_RcNonLethal>
+	<BO_RcUtility>Utility</BO_RcUtility>
+	<BO_HsHelmet>Helmets</BO_HsHelmet>
+	<BO_HsFace>Face and neck</BO_HsFace>
+	<BO_HsHat>Hats and hoods</BO_HsHat>
+	<BO_TsArmor>Armor</BO_TsArmor>
+	<BO_TsOuter>Outerwear</BO_TsOuter>
+	<BO_TsClothes>Clothes</BO_TsClothes>
+	<BO_MatRowClickTip>Click: make the bill with this material (click again: any material).</BO_MatRowClickTip>
+	<BO_StepTip>-/+ {0} per click.</BO_StepTip>
+	<BO_StepKeys>{0}+click x10, {1}+click x100.</BO_StepKeys>
+	<!-- bonuses and effects (Bonus.cs) -->
+	<BO_SecBonus>Bonuses and effects</BO_SecBonus>
+	<BO_BonusEquip>When worn / equipped</BO_BonusEquip>
+	<BO_BonusAbility>Abilities and charges</BO_BonusAbility>
+	<BO_BonusWorn>Applies while worn</BO_BonusWorn>
+	<BO_BonusImplant>Implant</BO_BonusImplant>
+	<BO_BonusMech>Mechanoid</BO_BonusMech>
+	<BO_BonusIngest>When ingested</BO_BonusIngest>
+	<BO_BonusOther>Other effects</BO_BonusOther>
+	<BO_BonusGrants>Grants</BO_BonusGrants>
+	<BO_BonusGrantsShort>Grants</BO_BonusGrantsShort>
+	<BO_BonusApplies>Applies</BO_BonusApplies>
+	<BO_BonusInstalls>Installs</BO_BonusInstalls>
+	<BO_BonusPartEff>Part efficiency</BO_BonusPartEff>
+	<BO_BonusPartEffTip>How well the installed part works compared to a natural one (100%).</BO_BonusPartEffTip>
+	<BO_BonusAbilityOf>Ability</BO_BonusAbilityOf>
+	<BO_BonusColTip>{0} gained when the item is worn or equipped.</BO_BonusColTip>
+	<BO_BonusMarkTip>This item does more than its stats show:</BO_BonusMarkTip>
+	<BO_BonusLinkTip>Click: open its info card.</BO_BonusLinkTip>
+	<BO_QPasteQueueTip>Paste the copied queue: {0} of {1} bills fit this bench.</BO_QPasteQueueTip>
+	<BO_CloseTab>Close</BO_CloseTab>
+	<BO_RecipeUnavailable>{0}: this recipe is not available on this bench right now (research not done, or removed by a mod).</BO_RecipeUnavailable>
+	<BO_SecAnimals>Animals</BO_SecAnimals>
+	<BO_SetSlBabies>Auto slaughter: "Babies" column (protect babies)</BO_SetSlBabies>
+	<BO_SetSlBabiesTip>Adds a "Babies" column to the vanilla auto slaughter window. A baby gives about 20% of an adult's meat (10% for tiny babies), so babies are not auto-slaughtered and do not count toward the limits unless you tick "Allow slaughter" for that animal. Off: vanilla rules.</BO_SetSlBabiesTip>
+	<BO_SlBabies>Babies</BO_SlBabies>
+	<BO_SlBabiesTip>Babies are animals in their first life stage. A baby gives about 20% of an adult's meat (10% for tiny babies). Juveniles give about 50%.</BO_SlBabiesTip>
+	<BO_SlCurrentTip>Current babies of this animal that auto slaughter can see.</BO_SlCurrentTip>
+	<BO_SlAllowTip>Allow auto slaughter of babies of this animal. Off: babies are never auto-slaughtered and are left out of the young and total counts and limits (like bonded animals when they are not allowed).</BO_SlAllowTip>
+	<!-- Task force (temporary work priority) -->
+	<BO_SecWork>Work</BO_SecWork>
+	<BO_SetTaskForce>"Task force" button on the Work tab</BO_SetTaskForce>
+	<BO_SetTaskForceTip>Temporary work priority: put many colonists on a work type (e.g. Handling at 1) for a few hours and give each one back the priority they had when the time is over.</BO_SetTaskForceTip>
+	<BO_TFButton>Task force</BO_TFButton>
+	<BO_TFButtonTip>Raise one or more work types on many colonists for a while (e.g. everyone on Handling for 6 hours after animals escaped a pen). When the time is over, each colonist goes back to the priority they had. A priority you change by hand in the meantime is kept.</BO_TFButtonTip>
+	<BO_TFTitle>Task force</BO_TFTitle>
+	<BO_TFIntro>Temporary priority: when the time is over, each colonist goes back to the value they had (a value you change by hand in the meantime is kept).</BO_TFIntro>
+	<BO_TFWorks>Work</BO_TFWorks>
+	<BO_TFPrio>Priority</BO_TFPrio>
+	<BO_TFPrioTip>Priority set during the task force (1 = done first). Within the same number the game follows the column order of the Work tab: Firefighter, Patient, Doctor, Basic and Warden come before Handling.</BO_TFPrioTip>
+	<BO_TFDuration>Duration</BO_TFDuration>
+	<BO_TFHours>{0}h</BO_TFHours>
+	<BO_TFDays>{0}d</BO_TFDays>
+	<BO_TFInterrupt>Interrupt current work</BO_TFInterrupt>
+	<BO_TFInterruptTip>Colonists doing ordinary work of a lower priority drop it and pick the task force work right away. Never interrupted: eating, sleeping, doctor work (rescue, tending, surgery), patients in bed, firefighting, emergencies, colonists carrying someone, drafted colonists and orders you gave by hand.</BO_TFInterruptTip>
+	<BO_TFManualOff>Manual priorities are off: without them the task force can only turn the work on (no priority 1).</BO_TFManualOff>
+	<BO_TFTurnOnManual>Turn on manual priorities</BO_TFTurnOnManual>
+	<BO_TFTurnOnManualTip>The same as the "Manual priorities" checkbox of the Work tab. It stays on after the task force.</BO_TFTurnOnManualTip>
+	<BO_TFColonists>Colonists</BO_TFColonists>
+	<BO_TFAll>All</BO_TFAll>
+	<BO_TFNone>None</BO_TFNone>
+	<BO_TFPickWork>Pick at least one work type on the left.</BO_TFPickWork>
+	<BO_TFMoreWorks>+{0} more work types (not shown)</BO_TFMoreWorks>
+	<BO_TFIncapable>{0} cannot do any of the chosen work types.</BO_TFIncapable>
+	<BO_TFActive>Active task forces</BO_TFActive>
+	<BO_TFActiveLine>{0}: {1} colonists, {2} left</BO_TFActiveLine>
+	<BO_TFBackTo>back to {0}</BO_TFBackTo>
+	<BO_TFOff>off</BO_TFOff>
+	<BO_TFEnd>End</BO_TFEnd>
+	<BO_TFEndTip>End the task force ({0}) now: each colonist goes back to the priority they had.</BO_TFEndTip>
+	<BO_TFEndNow>End now</BO_TFEndNow>
+	<BO_TFRemoveTip>Take {0} out of this task force (back to the previous priority).</BO_TFRemoveTip>
+	<BO_TFNeedWork>Pick a work type.</BO_TFNeedWork>
+	<BO_TFNeedPawn>No colonist selected can do the chosen work.</BO_TFNeedPawn>
+	<BO_TFSummary>{0} colonists on {1} for {2}</BO_TFSummary>
+	<BO_TFStart>Start</BO_TFStart>
+	<BO_TFNothing>Nothing to change: no selected colonist can do the chosen work.</BO_TFNothing>
+	<BO_TFStarted>Task force started ({0}): {1} colonists for {2}.</BO_TFStarted>
+	<BO_TFEnded>Task force over ({0}): {1} colonists back to their previous priority.</BO_TFEnded>
+	<BO_TFEndedEarly>Task force ended ({0}): {1} colonists back to their previous priority.</BO_TFEndedEarly>
+	<BO_TFKept>{0} kept a priority you changed by hand.</BO_TFKept>
+</LanguageData>
