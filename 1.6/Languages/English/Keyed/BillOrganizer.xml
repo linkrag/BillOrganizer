@@ -106,7 +106,8 @@
 	<BO_CanMakeUnknown>Unknown: none of the ingredients is a counted resource.</BO_CanMakeUnknown>
 	<BO_PinPanelTitle>Pinned ({0})</BO_PinPanelTitle>
 	<BO_PinPanelTip>Pinned resources. Click to collapse. Ctrl+click a resource in the list on the left to pin or unpin it; right-click a row for the minimum.</BO_PinPanelTip>
-	<BO_PinRowTip>Right-click: minimum / unpin.</BO_PinRowTip>
+	<BO_PinRowTip>Click: select the next stack on the map and move the camera to it (largest first). Shift+click: select every stack. Ctrl+click: pin / unpin. Right-click: minimum / unpin.</BO_PinRowTip>
+	<BO_ResJumpNone>No {0} on the map.</BO_ResJumpNone>
 	<BO_PinMinTip>Minimum: {0} (turns red below it).</BO_PinMinTip>
 	<BO_PinUsedBy>Recipes that use it (batches the stock allows):</BO_PinUsedBy>
 	<BO_PinMoreRecipes>... and {0} more</BO_PinMoreRecipes>

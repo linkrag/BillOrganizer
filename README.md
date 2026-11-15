@@ -16,6 +16,7 @@ Mod de RimWorld 1.6/1.7 (`linkrag.billorganizer`, autor Felipe). Troca o menu "A
 ## Dá para fazer N e recursos fixados
 - A lista e o detalhe mostram quantos lotes da receita os recursos guardados permitem (mesma contagem da lista de recursos à esquerda), o item que limita e o botão **Máx** para a quantidade; a coluna "Dá para fazer" ordena.
 - A lista de recursos à esquerda ganha nomes, busca, ordenação (categoria / quantidade / nome) e categorias recolhíveis; os fixados ficam numa seção no topo (opção liga/desliga).
+- **Clique** num recurso da lista à esquerda ou do painel de fixados seleciona a pilha no mapa e leva a câmera até ela; cliques seguidos passam pelas pilhas (a maior primeiro) e Shift+clique seleciona todas.
 - **Ctrl+clique** num recurso da lista à esquerda o fixa; o painel ao lado mostra o estoque, avisa abaixo do mínimo (botão direito) e lista as receitas que usam o recurso.
 
 ## Abate automático: bebês

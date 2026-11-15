@@ -8,7 +8,12 @@ Compila em 1.6 e 1.7 (3/nov/2026). **Nada foi testado no jogo ainda**; o visual 
 - `Docs/WORKSHOP_DESCRIPTION.txt`: linha "Mod version" ao lado de "Versions" e seção [h2]Changelog[/h2] no fim (a 1.0.0 vira uma linha só, porque os recursos já estão descritos acima; o limite da Steam é 8000 caracteres). **Colar na página da Oficina: pendente com o usuário.**
 - Nada testado no jogo (só o número no menu de mods mudaria).
 
-## "Até X" anda pelo que cada construção produz (13/nov/2026) - instalado (1.6 e 1.7), **NÃO testado no jogo**
+## Clique no recurso seleciona e foca a pilha (13/nov/2026) - instalado (1.6 e 1.7), **NÃO testado no jogo**
+- Pedido do usuário: clicar num recurso da lista à esquerda (`ResourceList`), do painel de fixados (`ResourcePanel`) ou do readout vanilla (quando a nossa lista está desligada) seleciona a pilha no mapa e centraliza a câmera (`ResourceJump` em `ResourcePanel.cs`, `CameraJumper.TryJumpAndSelect`).
+- Cada clique no mesmo recurso vai para a próxima pilha (a maior primeiro, depois volta ao começo); Shift+clique seleciona todas e foca a maior. As pilhas são as que o contador conta (guardadas em estoque, fora do fog); sem nenhuma, qualquer uma no mapa; sem nada, mensagem `BO_ResJumpNone`. Ctrl+clique continua fixando (agora também no painel) e o botão direito continua no menu. Tooltip `BO_PinRowTip` com as dicas (EN/PT).
+- Teste: clicar em Aço (vai à maior pilha), de novo (próxima), Shift+clique (todas), o mesmo no painel, Ctrl+clique e botão direito sem mudança, recurso ausente mostra a mensagem.
+
+## "Até X" anda pelo que cada construção produz (13/nov/2026) - **confirmado em jogo pelo usuário (13/nov, todos os testes)**
 - **Rodada 3 (auditoria por workflow de 3 agentes: nosso código, jogo/Dubs descompilados, defs dos 191 mods ativos)**: 1.144 de 2.569 receitas com produto tinham passo diferente do lote (CE 930; VCE 29, aoba 21, VGE 20, VBE 38, vanilla 15+3 DLC, MA/MAS 16...; lista completa no scratchpad da sessão, `mismatches.csv`). O passo já estava coberto pelo `TargetStepFix`; o que sobrava fora do lote era o **valor** da meta, agora corrigido:
   1. "+" da linha da receita (aba e janela) criava a tarefa com o `cfgQty` da receita anterior (o detalhe ainda não tinha recalculado): `AddOptions.qtyAuto` + `Configure` usa 1 lote desta receita quando o valor é nosso e nunca fica abaixo de 1 lote (`RecipeEntry.SetTarget`).
   2. Chip de modo do cartão (`BillCard.CycleMode`) mantinha o 10 vanilla: agora arredonda para cima em lotes inteiros (`RecipeEntry.SnapTarget`).

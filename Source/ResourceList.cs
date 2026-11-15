@@ -213,6 +213,7 @@ namespace BillOrganizer
             if (ev.type != EventType.MouseDown) return;
             if (ev.button == 0 && ev.control) { ev.Use(); s.TogglePinned(d); viewDirty = true; }
             else if (ev.button == 1) { ev.Use(); ResourcePanel.OpenRowMenu(d); viewDirty = true; }
+            else if (ev.button == 0) { ev.Use(); ResourceJump.Click(map, d, ev.shift); }
         }
 
         static readonly Color Edge = new Color(0f, 0f, 0f, 0.9f);

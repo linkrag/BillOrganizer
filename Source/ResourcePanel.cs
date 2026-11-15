@@ -58,6 +58,11 @@ namespace BillOrganizer
                     BillOrganizerMod.Settings.TogglePinned(thingDef);
                     SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
                 }
+                else if (ev.type == EventType.MouseDown && ev.button == 0 && Mouse.IsOver(rect))
+                {
+                    ev.Use();
+                    ResourceJump.Click(Find.CurrentMap, thingDef, ev.shift);
+                }
             }
             catch (Exception e) { Log.ErrorOnce("[BillOrganizer] Pin click failed: " + e.Message, 0x0B110031); }
         }
@@ -120,10 +125,12 @@ namespace BillOrganizer
                 Ui.Text_(new Rect(row.xMax - cw - 4f, row.y, cw, RowH), cnt, c, TextAnchor.MiddleRight);
                 ThingDef tipDef = d; int tipMin = min;
                 TooltipHandler.TipRegion(row, () => RowTip(tipDef, tipMin), 0x0B110100 + d.shortHash);
-                if (Event.current.type == EventType.MouseDown && Event.current.button == 1 && Mouse.IsOver(row))
+                Event ev = Event.current;
+                if (ev.type == EventType.MouseDown && Mouse.IsOver(row))
                 {
-                    Event.current.Use();
-                    OpenRowMenu(d);
+                    if (ev.button == 1) { ev.Use(); OpenRowMenu(d); }
+                    else if (ev.button == 0 && ev.control) { ev.Use(); s.TogglePinned(d); SoundDefOf.Tick_Tiny.PlayOneShotOnCamera(); }
+                    else if (ev.button == 0) { ev.Use(); ResourceJump.Click(map, d, ev.shift); }
                 }
             }
         }
@@ -148,6 +155,64 @@ namespace BillOrganizer
             if (s.MinOf(d) > 0) list.Add(new FloatMenuOption("BO_PinClearMin".Translate(), () => s.SetMin(d, 0)));
             list.Add(new FloatMenuOption((s.pinnedRes.Contains(d.defName) ? "BO_PinRemove" : "BO_PinAdd").Translate(), () => s.TogglePinned(d)));
             Find.WindowStack.Add(new FloatMenu(list));
+        }
+    }
+
+    /// <summary>
+    /// Click on a resource row (our list, the pinned panel, the vanilla readout): select a stack on the map and center the camera on it.
+    /// Each click on the same resource goes to the next stack (largest first, then wraps); Shift+click selects every stack.
+    /// The stacks are the ones the resource counter counts (things held in storage), else any spawned one outside the fog.
+    /// </summary>
+    public static class ResourceJump
+    {
+        static ThingDef lastDef;
+        static int lastIdx;
+
+        public static List<Thing> Stacks(Map map, ThingDef d)
+        {
+            var list = new List<Thing>();
+            foreach (SlotGroup g in map.haulDestinationManager.AllGroupsListForReading)
+                foreach (Thing t in g.HeldThings)
+                    if (t.def == d && t.Spawned && !t.Position.Fogged(map)) list.Add(t);
+            if (list.Count == 0)
+                foreach (Thing t in map.listerThings.ThingsOfDef(d))
+                    if (t.Spawned && !t.Position.Fogged(map)) list.Add(t);
+            // largest first; position breaks ties so the order is stable between clicks
+            list.Sort((a, b) =>
+            {
+                int c = b.stackCount.CompareTo(a.stackCount);
+                if (c != 0) return c;
+                c = a.Position.x.CompareTo(b.Position.x);
+                return c != 0 ? c : a.Position.z.CompareTo(b.Position.z);
+            });
+            return list;
+        }
+
+        public static void Click(Map map, ThingDef d, bool all)
+        {
+            try
+            {
+                if (map == null || d == null) return;
+                List<Thing> stacks = Stacks(map, d);
+                if (stacks.Count == 0)
+                {
+                    Messages.Message("BO_ResJumpNone".Translate(d.LabelCap), MessageTypeDefOf.RejectInput, false);
+                    return;
+                }
+                if (all)
+                {
+                    CameraJumper.TryJump(stacks[0]);
+                    Find.Selector.ClearSelection();
+                    foreach (Thing t in stacks) Find.Selector.Select(t, playSound: false);
+                    lastDef = d; lastIdx = 0;
+                    SoundDefOf.Click.PlayOneShotOnCamera();
+                    return;
+                }
+                lastIdx = d == lastDef ? (lastIdx + 1) % stacks.Count : 0;
+                lastDef = d;
+                CameraJumper.TryJumpAndSelect(stacks[lastIdx]);
+            }
+            catch (Exception e) { Log.ErrorOnce("[BillOrganizer] Resource jump failed: " + e, 0x0B110033); }
         }
     }
 

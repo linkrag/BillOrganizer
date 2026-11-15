@@ -105,7 +105,8 @@
 	<BO_CanMakeUnknown>Desconhecido: nenhum ingrediente é um recurso contado.</BO_CanMakeUnknown>
 	<BO_PinPanelTitle>Fixados ({0})</BO_PinPanelTitle>
 	<BO_PinPanelTip>Recursos fixados. Clique para recolher. Ctrl+clique num recurso da lista à esquerda fixa ou desafixa; botão direito numa linha define o mínimo.</BO_PinPanelTip>
-	<BO_PinRowTip>Botão direito: mínimo / desafixar.</BO_PinRowTip>
+	<BO_PinRowTip>Clique: seleciona a próxima pilha no mapa e leva a câmera até ela (a maior primeiro). Shift+clique: seleciona todas as pilhas. Ctrl+clique: fixar / desafixar. Botão direito: mínimo / desafixar.</BO_PinRowTip>
+	<BO_ResJumpNone>Nenhum(a) {0} no mapa.</BO_ResJumpNone>
 	<BO_PinMinTip>Mínimo: {0} (fica vermelho abaixo disso).</BO_PinMinTip>
 	<BO_PinUsedBy>Receitas que usam (lotes que o estoque permite):</BO_PinUsedBy>
 	<BO_PinMoreRecipes>... e mais {0}</BO_PinMoreRecipes>
