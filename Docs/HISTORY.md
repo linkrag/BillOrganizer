@@ -82,3 +82,6 @@ Lição (técnica): `Listing_Standard.Label(string, float, string)` fica ambígu
 ## 13/nov: versão e changelog
 Pedido: changelog e versão na descrição da Oficina. Versões montadas a partir do STATUS (1.0.0 7/nov, 1.1.0 10/nov, 1.2.0 11/nov, 1.2.1 12/nov, 1.3.0 13/nov). Lição: com o changelog completo a descrição passou de 8000 caracteres (limite da Steam); a 1.0.0 virou uma linha e a lista inteira fica no `Docs/CHANGELOG.md`.
 - 13/nov/2026: a rodada do passo/meta de "Até X" passou em todos os testes do usuário. Novo: clique num recurso (lista, painel de fixados, readout vanilla) seleciona a pilha e foca a câmera, ciclando pelas pilhas; Shift seleciona todas (`ResourceJump`).
+
+## 15/nov: perna de pau (relato da Oficina)
+- A janela de receitas abria também na aba Operações do colono e criava `Bill_Production` sem parte do corpo: ingredientes gastos, cirurgia nunca feita. O usuário não reproduzia porque usa a lista de cirurgias do Dubs. Lições: **todo hook em `BillStack.DoListing` vale também para a aba Operações** (o Pawn é `IBillGiver` e `Thing`); **`BillUtility.MakeNewBill` nunca cria `Bill_Medical`**, cirurgia só por `HealthCardUtility.CreateSurgeryBill` com a parte. Corrigido na 1.3.1 (menu vanilla para Pawn, `IsSurgery` fora do `Build`, limpeza das tarefas salvas).

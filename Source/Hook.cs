@@ -58,6 +58,10 @@ namespace BillOrganizer
             try
             {
                 BillStack stack = Current;
+                // The pawn Operations tab (HealthCardUtility.DrawMedOperationsTab) uses this same DoListing. Its vanilla options pick the
+                // body part and create a Bill_Medical (CreateSurgeryBill); our window would make a plain Bill_Production with no part,
+                // which eats the ingredients and never does the surgery. Colonists, animals and mechs always keep the vanilla menu.
+                if (stack?.billGiver is Pawn) return new FloatMenu(vanillaOptions);
                 BillOrganizerSettings s = BillOrganizerMod.Settings;
                 if (s.enabled && s.integration == IntegrationMode.Auto && stack != null)
                 {

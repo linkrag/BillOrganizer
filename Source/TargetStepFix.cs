@@ -76,7 +76,7 @@ namespace BillOrganizer
     [HarmonyPatch(typeof(Game), nameof(Game.FinalizeInit))]
     static class Patch_GameFinalizeInit_TargetStep
     {
-        static void Postfix() { TargetStepFix.Apply(); TargetStepFix.NormalizeBills(); }
+        static void Postfix() { TargetStepFix.Apply(); TargetStepFix.NormalizeBills(); SurgeryFix.RemoveBroken(); }
     }
 
     /// <summary>

@@ -2,6 +2,11 @@
 
 Versioning: SemVer. 1.0.0 = first Steam Workshop publication (2026-11-07). MINOR = new feature, PATCH = fixes/tweaks. Before each Workshop upload, bump `<modVersion>` in `About/About.xml`, this file and the Changelog section of `Docs/WORKSHOP_DESCRIPTION.txt` together (player-facing text, English).
 
+## 1.3.1 (2026-11-15)
+- Fixed: operations (e.g. peg leg) added from a colonist's Operations tab opened the recipe window and made a bill without a body part: the doctor used up the ingredients but no surgery happened.
+- Operations now always use the vanilla menu, where you pick the body part (left/right leg...). Colonists, animals and mechs.
+- Broken operation bills in existing saves are removed on load, with a message.
+
 ## 1.3.0 (2026-11-13)
 - New Work task force: raise work types on many colonists for a set time, then priorities return automatically.
 - Priorities you change by hand are kept; end it early or take out a single colonist. Saved with the game.

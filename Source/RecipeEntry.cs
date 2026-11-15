@@ -180,13 +180,14 @@ namespace BillOrganizer
         public static List<RecipeEntry> Build(BillStack stack)
         {
             var bench = stack.billGiver as Thing;
-            if (bench == null) return null;
+            // a pawn's stack holds surgeries: they need a body part and a Bill_Medical, which MakeNewBill never creates
+            if (bench == null || bench is Pawn) return null;
             var list = new List<RecipeEntry>();
             List<RecipeDef> recipes = bench.def.AllRecipes;
             for (int i = 0; i < recipes.Count; i++)
             {
                 RecipeDef r = recipes[i];
-                if (!r.AvailableNow || !r.AvailableOnNow(bench)) continue;
+                if (r.IsSurgery || !r.AvailableNow || !r.AvailableOnNow(bench)) continue;
                 list.Add(Make(r, null, r.LabelCap, i));
                 // same as vanilla: one extra entry per ideology building style that makes this product
                 if (Faction.OfPlayer?.ideos != null)

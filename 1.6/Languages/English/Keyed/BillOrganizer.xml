@@ -108,6 +108,7 @@
 	<BO_PinPanelTip>Pinned resources. Click to collapse. Ctrl+click a resource in the list on the left to pin or unpin it; right-click a row for the minimum.</BO_PinPanelTip>
 	<BO_PinRowTip>Click: select the next stack on the map and move the camera to it (largest first). Shift+click: select every stack. Ctrl+click: pin / unpin. Right-click: minimum / unpin.</BO_PinRowTip>
 	<BO_ResJumpNone>No {0} on the map.</BO_ResJumpNone>
+	<BO_BrokenSurgeryRemoved>Removed {0} broken operation bill(s) created by Colony Organizer's recipe window (they used up the ingredients without doing the surgery). Add them again from the Operations tab.</BO_BrokenSurgeryRemoved>
 	<BO_PinMinTip>Minimum: {0} (turns red below it).</BO_PinMinTip>
 	<BO_PinUsedBy>Recipes that use it (batches the stock allows):</BO_PinUsedBy>
 	<BO_PinMoreRecipes>... and {0} more</BO_PinMoreRecipes>

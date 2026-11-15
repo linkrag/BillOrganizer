@@ -2,6 +2,20 @@
 
 Compila em 1.6 e 1.7 (3/nov/2026). **Nada foi testado no jogo ainda**; o visual em especial só se valida com screenshot do usuário.
 
+## Cirurgias fora da janela de receitas (15/nov/2026) - versão **1.3.1**, instalado (1.6 e 1.7), **NÃO testado no jogo**
+- Relato da Oficina (Arthur): "a perna de pau foi feita, os recursos gastos, mas o colono não ficou com ela". **Confirmado pelo usuário com prints** (nossa janela aberta na aba Operações com 106 cirurgias sem lado/membro; tarefa "Install peg leg" com "Do X times"; depois da cirurgia, sem anestesia nem perna de pau). Não reproduzia antes porque o usuário adiciona cirurgias pela lista do Dubs Mint Menus.
+- **Causa (verificada no 1.7 descompilado)**: `HealthCardUtility.DrawMedOperationsTab` usa `pawn.BillStack.DoListing`, então o nosso transpiler (`Hook.cs`) trocava o menu de cirurgia pela janela de receitas; `RecipeEntry.Build` aceitava o Pawn (`billGiver as Thing`) e listava `pawn.def.AllRecipes`; `AddBill` usa `BillUtility.MakeNewBill`, que **nunca** cria `Bill_Medical` (sai `Bill_Production`, sem `Part`). O vanilla cria por `HealthCardUtility.CreateSurgeryBill(pawn, recipe, part)`. O `Hediff_AddedPart.PostAdd` com parte nula também quebraria (`Part.parts`).
+- **Correção**:
+  1. `Patch_DoListing.OpenPicker`: `billGiver is Pawn` sempre devolve o `FloatMenu` vanilla (colono, animal, mecanoide).
+  2. `RecipeEntry.Build`: devolve null para Pawn e pula `recipe.IsSurgery` (mod que ponha cirurgia numa bancada).
+  3. `SurgeryFix.RemoveBroken` (novo `Source/SurgeryFix.cs`, chamado no postfix de `Game.FinalizeInit`): apaga de `pawn.health.surgeryBills` (= `Pawn.BillStack`, verificado) toda tarefa de cirurgia que não é `Bill_Medical`, loga e mostra `BO_BrokenSurgeryRemoved` (EN/PT). Independe das opções.
+- Versão 1.3.1: `About.xml`, `CHANGELOG.md`, `WORKSHOP_DESCRIPTION.txt`. Janela de cirurgia própria ficou em `IDEAS.md` (pedido do usuário: hotfix agora, janela depois).
+- **A testar**:
+  1. Desativar o Dubs (ou usar o "Add bill" vanilla da aba Operações): abre o menu vanilla com "Install peg leg (Left leg)/(Right leg)"; a tarefa não tem "Do X times".
+  2. O médico opera: anestesia + perna de pau no membro escolhido.
+  3. Carregar o save do print: a tarefa inválida some, aparece a mensagem e a linha "Removed N broken surgery bill(s)" no `Player.log`.
+  4. Bancadas continuam abrindo a nossa janela; animal e mecanoide usam o menu vanilla; sem erros no log.
+
 ## Versão e changelog (13/nov/2026) - versão atual **1.3.0**, sem efeito no jogo além do número
 - `<modVersion>1.3.0</modVersion>` no `About/About.xml` (o campo existe no `ModMetaData` da 1.6 e da 1.7; o menu de mods mostra a versão).
 - `Docs/CHANGELOG.md` (novo, inglês, para jogador): uma versão por dia com mudança visível desde a publicação (1.0.0 = 7/nov). Montado por workflow de agentes a partir de STATUS/HISTORY/git e conferido item a item por um revisor cético.

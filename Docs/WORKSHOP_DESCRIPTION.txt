@@ -53,10 +53,16 @@
 [b]Requires:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
 [b]Load order:[/b] after Harmony and the mods above (sorted automatically).
 [b]Versions:[/b] RimWorld 1.6 and 1.7
-[b]Mod version:[/b] 1.3.0 (2026-11-13), see the changelog below.
+[b]Mod version:[/b] 1.3.1 (2026-11-15), see the changelog below.
 [b]Languages:[/b] English, Portuguese (Brazil)
 
 [h2]Changelog[/h2]
+[b]1.3.1[/b] (2026-11-15)
+[list]
+[*]Fixed: operations (e.g. peg leg) added from a colonist's Operations tab opened the recipe window and made a bill without a body part: the doctor used up the ingredients but no surgery happened.
+[*]Operations now always use the vanilla menu, where you pick the body part (left/right leg...). Colonists, animals and mechs.
+[*]Broken operation bills in existing saves are removed on load, with a message.
+[/list]
 [b]1.3.0[/b] (2026-11-13)
 [list]
 [*]New Work task force: raise work types on many colonists for a set time, then priorities return automatically.
