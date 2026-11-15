@@ -2,7 +2,7 @@
 
 Compila em 1.6 e 1.7 (3/nov/2026). **Nada foi testado no jogo ainda**; o visual em especial só se valida com screenshot do usuário.
 
-## Cirurgias fora da janela de receitas (15/nov/2026) - versão **1.3.1**, instalado (1.6 e 1.7), **NÃO testado no jogo**
+## Cirurgias fora da janela de receitas (15/nov/2026) - versão **1.3.1**, instalado (1.6 e 1.7), **confirmado em jogo pelo usuário (15/nov, print: menu vanilla com lado/membro, anestesia e perna de pau instalada)**
 - Relato da Oficina (Arthur): "a perna de pau foi feita, os recursos gastos, mas o colono não ficou com ela". **Confirmado pelo usuário com prints** (nossa janela aberta na aba Operações com 106 cirurgias sem lado/membro; tarefa "Install peg leg" com "Do X times"; depois da cirurgia, sem anestesia nem perna de pau). Não reproduzia antes porque o usuário adiciona cirurgias pela lista do Dubs Mint Menus.
 - **Causa (verificada no 1.7 descompilado)**: `HealthCardUtility.DrawMedOperationsTab` usa `pawn.BillStack.DoListing`, então o nosso transpiler (`Hook.cs`) trocava o menu de cirurgia pela janela de receitas; `RecipeEntry.Build` aceitava o Pawn (`billGiver as Thing`) e listava `pawn.def.AllRecipes`; `AddBill` usa `BillUtility.MakeNewBill`, que **nunca** cria `Bill_Medical` (sai `Bill_Production`, sem `Part`). O vanilla cria por `HealthCardUtility.CreateSurgeryBill(pawn, recipe, part)`. O `Hediff_AddedPart.PostAdd` com parte nula também quebraria (`Part.parts`).
 - **Correção**:
